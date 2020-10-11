@@ -1,0 +1,130 @@
+*{
+  margin: 0px; 
+}
+
+/* ヘッダー */
+
+.top-page-header {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  /* position: fixed; */
+  /* z-index: 1; */
+}
+
+.photoroke-icon{
+  height: 90%;
+  /* margin-top: 10px; */
+  position: absolute;
+  left: 30px;
+}
+
+.photoroke-icon-photo{
+  height: 100%;
+}
+
+.top-page-name{
+  height: 50%;
+  font-size: 3vh;
+}
+
+.sign-up{
+  height: 50%;
+  margin: 10px, 0px;
+  position: absolute;
+  right: 30px;
+}
+
+.sign-up-icon{
+  height: 100%;
+}
+
+.login{
+  height: 50%;
+  margin: 10px, 0px;
+  position: absolute;
+  right: 300px;
+}
+
+.login-icon{
+  height: 100%;
+}
+
+/* 本文 */
+
+.contents {
+  width: 100vw;
+}
+
+.top-image-text {
+  width: 100%;
+  position: relative;
+}
+
+.top-image {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+.concept-text{
+  font-size: 60px;
+  color: #2d2b2b;
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-contents {
+  width: 100vw;
+  text-align: center;
+}
+
+.photoroke-big {
+  width: 50%;
+  /* margin:25px 25% 25px 25%; */
+  margin: 20px 0px;
+}
+
+.app-heading {
+  margin-left: 20px;
+}
+
+.app-description{
+  margin: 0px 40px;
+}
+
+.concept-image{
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: yellow;
+}
+
+.left-concept-image{
+  width: 25%;
+  background-color: tomato;
+}
+ 
+.left-image{
+  width: 100%;
+}
+
+.right-concept-image{
+  width: 25%;
+  background-color: tomato;
+}
+
+.right-image{
+  width: 100%;
+}
