@@ -1,6 +1,6 @@
 <div class='top-header'>
-  <%#ロゴの情報が入る%>
 
+  <%#ロゴの情報が入る%>
   <div class='photoroke-icon'>
     <a href="/">
       <img class='photoroke-icon-photo'src="/assets/Photoroke_logo.svg">
@@ -8,27 +8,20 @@
   </div>
 
   <%#ページの名前が入る%>
-  <%# <h2 class='top-page-name'> %>
-    <%# ここに各ページの名前が入ります %>
-  <%# </h2> %>
-
-  <%# ログインアイコン %>
-  <div class="login">
-    <a href="#">
-      <img 
-        class="login-icon"
-        src="/assets/login.svg"
-        alt="ログインアイコン">
-    </a>
+  <div class='top-page-name'>
+    <h2 class='page-name'> 
+      ここに各ページの名前が入ります
+    </h2>
   </div>
 
-  <%#新規登録アイコン%>
-  <div class="sign-up">
-    <a href="new_user_registration">
-      <img
-        class="sign-up-icon"
-        src="/assets/sign-up.svg"
-        alt="新規登録ボタン">
-    </a>
+<%# ログイン %>
+  <div class='login-button'>
+    <a href='/users/sign_in' class="login">ログイン</a>
+  </div>
+
+
+<%#新規登録アイコン%>
+  <div class='sign-up-button'>
+    <a href='/users/sign_up' class="sign-up">新規登録</a>
   </div>
 </div>

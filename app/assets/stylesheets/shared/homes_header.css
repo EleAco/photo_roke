@@ -1,0 +1,73 @@
+*{
+  margin: 0px; 
+}
+
+.top-page-header {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.photoroke-icon{
+  height: 90%;
+  margin-top: 10px;
+  position: absolute;
+  left: 30px;
+}
+
+.photoroke-icon-photo{
+  height: 100%;
+}
+
+/* 新規登録 */
+.sign-up-button {
+  height: 50%;
+  position: absolute;
+  right: 60px;
+}
+
+.sign-up {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #00ffea;
+  background: #dafcff;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.sign-up:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
+
+/* ログイン */
+
+.login-button {
+  height: 50%;
+  position: absolute;
+  right: 200px;
+}
+
+.login {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.login:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
