@@ -1,0 +1,44 @@
+.top-header {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+}
+
+.top-page-name {
+  position: absolute;
+  text-align: center;
+}
+
+.page-name {
+  height: 100%;
+  font-size: 200%;
+}
+
+.sing-login-button {
+  height: 50%;
+  position: absolute;
+  right: 60px;
+}
+
+.sing-login {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 8px 10px 5px 10px;
+  text-decoration: none;
+  color: #FFA000;
+  background: #fff1da;
+  border-bottom: solid 4px #FFA000;
+  border-radius: 15px 15px 0 0;
+  transition: .4s;
+}
+
+.sing-login:hover {
+  background: #ffc25c;
+  color: #FFF;
+}
