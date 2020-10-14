@@ -13,4 +13,11 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX =  /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX
+
+  def self.guset 
+    find_or_create_by(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.nickname = 'ゲスト用'
+    end
+  end
 end
