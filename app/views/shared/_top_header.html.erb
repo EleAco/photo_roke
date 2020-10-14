@@ -7,19 +7,35 @@
     </a>
   </div>
 
-  <%#ページの名前が入る%>
-  <div class='top-page-name'>
-    <h2 class='page-name'> 
-      新規登録
-    </h2>
+<%# ハンバーガーアイコン %>
+  <div class='hamburger'>
+   <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown">
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content">ここに中身を入れる
+        <div class='logout-button'>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        </div>
+        <div class='my-page-button'>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <%#ページの名前が入る%>
+  <%# <div class='top-page-name'>
+    <h2 class='page-name'> 
+
+    </h2>
+  </div> %>
+
 <%# ログイン %>
-  <div class='sing-login-button'>
+  <%# <div class='sing-login-button'>
     <a href='/users/sign_in' class="sing-login">ログイン</a>
   </div>
 
-</div>
+</div> %>
 
 
 <%#新規登録アイコン%>

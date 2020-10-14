@@ -2,7 +2,10 @@ class PhotosController < ApplicationController
   before_action :move_to_index
   
   def index
-    
+  end
+
+  def new
+    @photo = Photo.new
   end
 
   private
