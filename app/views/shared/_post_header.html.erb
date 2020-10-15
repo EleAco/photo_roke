@@ -1,0 +1,46 @@
+<div class='top-header'>
+
+  <%#ロゴの情報が入る%>
+  <div class='photoroke-icon'>
+    <a href="/">
+      <img class='photoroke-icon-photo'src="/assets/Photoroke_logo.svg">
+    </a>
+  </div>
+
+<%# ハンバーガーアイコン %>
+  <div class='hamburger'>
+   <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown">
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content">ここに中身を入れる
+        <div class='logout-button'>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        </div>
+        <div class='my-page-button'>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%#ページの名前が入る%>
+  <div class='top-page-name'>
+    <h2 class='page-name'> 
+      <%= @page_name %>
+    </h2>
+  </div>
+</div>
+
+<%# ログイン %>
+  <%# <div class='sing-login-button'>
+    <a href='/users/sign_in' class="sing-login">ログイン</a>
+  </div>
+
+</div> %>
+
+
+<%#新規登録アイコン%>
+  <%# <div class='sign-up-button'>
+    <a href='/users/sign_up' class="sign-up">新規登録</a>
+  </div>
+</div> %>

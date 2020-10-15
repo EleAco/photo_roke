@@ -1,0 +1,29 @@
+.post-container {
+  width: 50vw;
+  height: 100vh; 
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: violet;
+}
+
+.post-photo-item {
+width: 75%;
+height: 50%;
+background-color: turquoise;
+}
+
+.post-map-item {
+width: 75%;
+height: 100px;
+margin: 50px 0px;
+background-color: tan;
+}
+
+.post-introduction-item {
+width: 75%;
+height: 100px;
+background-color: tomato;
+}

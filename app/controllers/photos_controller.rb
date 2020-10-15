@@ -5,7 +5,8 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photo = Photo.new
+    # @photo = Photo.new
+    @page_name ='投稿ページ'
   end
 
   private
