@@ -1,6 +1,7 @@
 <%= render 'shared/post_header'%>
 <div class='post-container'>
   <%= form_with(model: @photo, local: true) do |f| %>
+  <%end%>
   <div class='post-photo-item'>
     <div class="post-photo-text">
       写真
@@ -9,11 +10,10 @@
       <p>
         クリックしてファイルをアップロード
       </p>
-      <%= f.fild_field :image, id:'photo-image'%>
+      <%# <%= f.fild_field :image, id:'photo-image'%> 
     </div>
   </div>
 
-  </div>
   <div class='post-map-item'>
 
     <div class ='photo-map'>
@@ -73,11 +73,24 @@
         });
       }
       </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_API_KEY&callback=initMap" async defer></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
     </div>
-
   </div>
+
+  <div class="center">
+      <div class="btn-margin">
+          <button id="btn" class="btn btn-outline-primary btn-lg">
+              現在位置を取得する
+          </button>
+      </div>
+      <div class="txt-margin">
+          <p>緯度：<span id="latitude">???</span><span>度</span></p>
+          <p>経度：<span id="longitude">???</span><span>度</span></p>
+      </div>
+  </div>
+  <script src="geolocation.js"></script>
+
   <div class='post-introduction-item'>
-    <%= f.text_area :name, class:"introduction-text", id:"item-name"%>
+    <%# <%= f.text_area :name, class:"introduction-text", id:"item-name"%> 
   </div>
 </div>

@@ -11,6 +11,12 @@
   position: relative;
 }
 
+.center {
+  width: 100px;
+  position: absolute;
+  bottom: 50px;
+}
+
 .post-photo-item {
 width: 100%;
 height: 20%;
