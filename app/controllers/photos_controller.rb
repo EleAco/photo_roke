@@ -19,6 +19,10 @@ class PhotosController < ApplicationController
       end
   end
 
+  def show
+    
+  end
+
 
 
   private

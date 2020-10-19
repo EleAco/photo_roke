@@ -1,11 +1,13 @@
 <%= render 'shared/top_header'%>
 <% @photo.each do |photo|%>
   <div class='home-photo-container'>
-    <div class='user-name'>
-      <%= photo.user.nickname%>
-    </div>
-    <%= image_tag photo.image, class: 'user-photo'%>
-  </div>
+    <%= link_to photo_path(photo) do %>
+      <div class='user-name'>
+        <%= photo.user.nickname%>
+      </div>
+      <%= image_tag photo.image, class: 'user-photo'%>
+      </div>
+    <% end %>
 <% end %>
 <div class='post-btn'>
   <%= link_to "投稿", '/photos/new'%>
