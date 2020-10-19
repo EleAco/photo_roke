@@ -1,10 +1,21 @@
-<div class='user-profile-container'>
-  <div class='user'>
-</div>
-
-<div class='user-show-contailer'>
-  <div class='user-show-name'>
-    <%= @photo.user.nickname%>
+<div class='photo-show-container'>
+  <div class='user-profile'>
+    <div class='user-image'>
+    </div>
+    <div class='user-introduction'>
+    </div>
+    <div class='user-follow-btn'>
+      フォローする
+    </div>
   </div>
-  <%= image_tag @photo.image, class: 'user-show-photo' %>
+
+  <div class='user-show-contailer'>
+    <div class='user-show-name'>
+      <%= @photo.user.nickname%>
+    </div>
+    <%= image_tag @photo.image, class: 'user-show-photo' %>
+    <div>
+      komennto
+    </div>
+  </div>
 </div>

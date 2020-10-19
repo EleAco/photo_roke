@@ -1,7 +1,7 @@
 <%= render 'shared/top_header'%>
 <% @photo.each do |photo|%>
   <div class='home-photo-container'>
-    <%= link_to photo_path(@photo) do %>
+    <%= link_to photo_path(photo) do %>
       <div class='user-name'>
         <%= photo.user.nickname%>
       </div>
