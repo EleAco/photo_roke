@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_action :move_to_index
   
   def index
+    @photo = Photo.all.order('created_at DESC')
   end
 
   def new
