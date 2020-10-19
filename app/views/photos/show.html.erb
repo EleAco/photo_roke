@@ -1,1 +1,8 @@
-<h1>これがあれです</h1>
+<div class='user-pro'>
+
+<div class='user-show-contailer'>
+  <div class='user-show-name'>
+    <%= @photo.user.nickname%>
+  </div>
+  <%= image_tag @photo.image, class: 'user-show-photo' %>
+</div>
