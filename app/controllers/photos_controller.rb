@@ -5,11 +5,27 @@ class PhotosController < ApplicationController
   end
 
   def new
-    # @photo = Photo.new
+    @photo = Photo.new
     @page_name ='投稿ページ'
   end
 
+  def create
+    @photo = Photo.new(photo_params)
+      if @photo.save
+        redirect_to root_path
+      else
+        render :new
+      end
+  end
+
+
+
   private
+
+  def photo_params
+    params.require(:photo).permit(:image, :explanation).merge(user_id: current_user.id)
+  end
+
 
   def move_to_index
     unless user_signed_in?

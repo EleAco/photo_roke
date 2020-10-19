@@ -1,7 +1,6 @@
 <%= render 'shared/post_header'%>
 <div class='post-container'>
   <%= form_with(model: @photo, local: true) do |f| %>
-  <%end%>
   <div class='post-photo-item'>
     <div class="post-photo-text">
       写真
@@ -10,7 +9,7 @@
       <p>
         クリックしてファイルをアップロード
       </p>
-      <%= f.fild_field :image %>
+      <%= f.file_field :image, class: 'photo-image' %>
     </div>
   </div>
 
@@ -91,6 +90,11 @@
   <%= javascript_pack_tag 'photo/new' %>
 
   <div class='post-introduction-item'>
-    <%= f.text_area :name, class:"introduction-text", %>
+    <%= f.text_area :explanation, class:"introduction-text" %>
   </div>
+
+  <div class='post-new-btn'>
+    <%= f.submit "投稿する" ,class: 'post-new'%>
+  </div>
+  <% end %>
 </div>
