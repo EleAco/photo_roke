@@ -8,6 +8,8 @@
 
     <ul class ='nore_list'>
       <li>
+        <%= link_to '編集', "/photos/#{photo.id}/edit", metohod: :get%>
+      <li>
         <%= link_to '消去', "/photos/#{photo.id}", method: :delete %>
       </li>
     </ul>

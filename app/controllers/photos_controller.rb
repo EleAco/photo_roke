@@ -26,10 +26,18 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    photo = Photo.find(params[:di])
-    phomto.destroy
+    photo = Photo.find(params[:id])
+    photo.destroy
   end
 
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    photo = Photo.find(params[:id])
+    photo.update(photo_params)
+  end
 
   private
 

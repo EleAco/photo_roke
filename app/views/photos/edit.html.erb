@@ -1,0 +1,23 @@
+<div class='post-container'>
+  <%= form_with(model: @photo, local: true) do |f| %>
+  <div class='post-photo-item'>
+    <div class="post-photo-text">
+      写真
+    </div>
+    <div class="post-photo-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, class: 'photo-image' %>
+    </div>
+  </div>
+  
+  <div class='post-introduction-item'>
+    <%= f.text_area :explanation, class:"introduction-text" %>
+  </div>
+
+  <div class='post-new-btn'>
+    <%= f.submit "投稿する" ,class: 'post-new'%>
+  </div>
+  <% end %>
+</div>
