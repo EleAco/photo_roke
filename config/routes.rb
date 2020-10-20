@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   resources :photos do
     resources :comments, only: :create
   end
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get 'mypage'
+    end
+  end
 end

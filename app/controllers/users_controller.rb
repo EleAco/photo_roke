@@ -6,4 +6,8 @@ class UsersController < ApplicationController
     # @photos = User.photos.order("created_at DESC")
   end
 
+  def mypage
+    @photos = current_user.photos.order("created_at DESC")
+  end
+
 end

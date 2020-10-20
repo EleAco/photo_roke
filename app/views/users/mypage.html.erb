@@ -1,0 +1,10 @@
+<h1>これがマイページ</h1>
+<div class='user-profile-container'>
+  <div class='user-account-container'>
+  </div>
+  <div class='user-photo-container'>
+    <% @photos.each do |photo| %>
+      <%= image_tag photo.image%>
+    <% end %>
+  </div>
+</div>
