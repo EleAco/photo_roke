@@ -5,6 +5,12 @@
   <div class='user-photo-container'>
     <% @photos.each do |photo| %>
       <%= image_tag photo.image%>
-    <% end %>
+
+    <ul class ='nore_list'>
+      <li>
+        <%= link_to '消去', "/photos/#{photo.id}", method: :delete %>
+      </li>
+    </ul>
+    <%end%>
   </div>
 </div>
