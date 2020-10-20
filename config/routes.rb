@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :photos, except: :index
   root to: 'photos#index'
   get '/homes/home', to:'homes#index'
+  resources :photos do
+    resources :comments, only: :create
+  end
 end
