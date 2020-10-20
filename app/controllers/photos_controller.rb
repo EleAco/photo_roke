@@ -25,7 +25,19 @@ class PhotosController < ApplicationController
     @comments = @photo.comments.includes(:user)
   end
 
+  def destroy
+    photo = Photo.find(params[:id])
+    photo.destroy
+  end
 
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+
+  def update
+    photo = Photo.find(params[:id])
+    photo.update(photo_params)
+  end
 
   private
 

@@ -9,6 +9,7 @@
       </div>
     <% end %>
 <% end %>
+<%= link_to "マイページ","/users/#{current_user.id}/mypage" %>
 <div class='post-btn'>
   <%= link_to "投稿", '/photos/new'%>
 </div>
