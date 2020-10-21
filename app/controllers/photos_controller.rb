@@ -39,6 +39,10 @@ class PhotosController < ApplicationController
     photo.update(photo_params)
   end
 
+  def search
+    @photos = Photo.search(params[:keyword])
+  end
+
   private
 
   def photo_params
