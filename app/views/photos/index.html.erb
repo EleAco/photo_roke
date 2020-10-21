@@ -1,52 +1,55 @@
-<%= render 'shared/top_header'%>
-<div class="search-container">
-  <%= form_with(url: search_photos_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-    <%= form.submit "検索", class: "search-btn" %>
- <% end %> 
-</div>
+  <%= render 'shared/top_header'%>
+  <div class="search-container">
+    <%= form_with(url: search_photos_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+  <% end %> 
+  </div>
 
 
-<% @photo.each do |photo|%>
+  <% @photo.each do |photo|%>
 
-<div class='top-post-wrapper'>
-  <div class='top-post-container'>
-    <div class='post-user-container'>
-      <div class='post-user-header'>
-        <div class='post-user-icon'>
-          ○
-        </div>
-        <%= link_to photo.user.nickname, photo_path(photo) , class: 'post-user-name'%>
-      </div>
-
-      <div class='post-main-photo'>
-        <div class='post-user-label'>
+  <div class='top-post-wrapper'>
+    <div class='top-post-container'>
+      <div class='post-user-container'>
+        <div class='post-user-header'>
+          <div class='post-user-icon'>
             ○
           </div>
+          <%= link_to photo.user.nickname, user_path(photo) , class: 'post-user-name'%>
+        </div>
 
-        <div class='post-user-main'>
-          <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+        <div class='post-main-photo'>
+          <div class='post-user-label'>
+              ○
+            </div>
+
+          <div class='post-user-main'>
+            <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+          </div>
+        </div>
+
+        <div class='post-footer-container'>
+          <div class='post-comment-btn'>
+            ○
+          </div>
+          <div class='post-favo-btn'>
+            ○
+          </div>
         </div>
       </div>
-
-      <div class='post-footer-container'>
-        <div class='post-comment-btn'>
-          ○
-        </div>
-        <div class='post-favo-btn'>
-          ○
-        </div>
-      </div>
-  
-    <% end %>
     </div>
   </div>
-</div>
-   
 
-<%# <%= link_to "マイページ","/users/#{current_user.id}/mypage" %> 
-
+  <% end %>
 <%# <div class='post-btn'>
-  <%= link_to "投稿", '/photos/new'%>
+  <%= link_to image_tag('new.png', class: "post-icon"),'/photos/new'%>
+  <%# <h2 class='post-text'>投稿する</h2>
+</div>  %>
 
-<%# </div> %>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>投稿する</span>
+  <a href= "/photos/new" >
+    <%= image_tag 'new.png' ,class: "purchase-btn-icon" %>
+  </a>
+</div>

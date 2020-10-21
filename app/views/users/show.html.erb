@@ -1,9 +1,42 @@
+<%= render 'shared/top_header'%>
+
 <div class='user-profile-container'>
   <div class='user-account-container'>
   </div>
   <div class='user-photo-container'>
     <% @photos.each do |photo| %>
-      <%= image_tag photo.image%>
-    <% end %>
+      <div class='top-post-wrapper'>
+        <div class='top-post-container'>
+          <div class='post-user-container'>
+            <div class='post-user-header'>
+              <div class='post-user-icon'>
+                ○
+              </div>
+              <%= link_to photo.user.nickname, user_path(photo) , class: 'post-user-name'%>
+            </div>
+
+            <div class='post-main-photo'>
+              <div class='post-user-label'>
+                  ○
+                </div>
+
+              <div class='post-user-main'>
+                <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+              </div>
+            </div>
+
+            <div class='post-footer-container'>
+              <div class='post-comment-btn'>
+                ○
+              </div>
+              <div class='post-favo-btn'>
+                ○
+              </div>
+            </div>
+        
+          <% end %>
+          </div>
+        </div>
+      </div>
   </div>
 </div>

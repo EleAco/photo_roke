@@ -97,3 +97,20 @@
 
 .post-fovo-btn {
 }
+
+.purchase-btn {
+  width: 7vw;
+  text-align: center;
+  bottom: 35px;
+  right: 17px;
+  position: fixed;
+}
+
+.purchase-btn-text {
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 60%;
+}
