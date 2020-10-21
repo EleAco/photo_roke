@@ -1,15 +1,43 @@
 <%= render 'shared/top_header'%>
 <% @photo.each do |photo|%>
-  <div class='home-photo-container'>
-    <%= link_to photo_path(photo) do %>
-      <div class='user-name'>
-        <%= photo.user.nickname%>
+<div class='top-post-wrapper'>
+  <div class='top-post-container'>
+    <div class='post-user-container'>
+      <div class='post-user-header'>
+        <div class='post-user-icon'>
+          ○
+        </div>
+        <%= link_to photo.user.nickname, photo_path(photo) , class: 'post-user-name'%>
       </div>
-      <%= image_tag photo.image, class: 'user-photo'%>
+
+      <div class='post-main-photo'>
+        <div class='post-user-label'>
+            ○
+          </div>
+
+        <div class='post-user-main'>
+          <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+        </div>
       </div>
+
+      <div class='post-footer-container'>
+        <div class='post-comment-btn'>
+          ○
+        </div>
+        <div class='post-favo-btn'>
+          ○
+        </div>
+      </div>
+  
     <% end %>
-<% end %>
-<%= link_to "マイページ","/users/#{current_user.id}/mypage" %>
-<div class='post-btn'>
-  <%= link_to "投稿", '/photos/new'%>
+    </div>
+  </div>
 </div>
+   
+
+<%# <%= link_to "マイページ","/users/#{current_user.id}/mypage" %> 
+
+<%# <div class='post-btn'>
+  <%= link_to "投稿", '/photos/new'%>
+
+<%# </div> %>
