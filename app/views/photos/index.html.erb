@@ -28,17 +28,16 @@
             <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
           </div>
         </div>
-
-        <div class='post-footer-container'>
-          <div class='post-comment-btn'>
-            ○
-          </div>
-          
-          <div id="favo_buttons_<%= photo.id %>">
-            <%= render partial: 'favorites/favo', locals: { photo: photo} %>
-           </div> 
-        </div>
       </div>
+
+      <div class='post-footer-container'>
+      <div class='post-comment-btn'>
+        ○
+      </div>
+      
+      <div id="favo_buttons_<%= photo.id %>">
+        <%= render partial: 'favorites/favo', locals: { photo: photo} %>
+      </div> 
     </div>
   </div>
 
