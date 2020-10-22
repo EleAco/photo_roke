@@ -33,8 +33,10 @@
           <div class='post-comment-btn'>
             ○
           </div>
-          <div class='post-favo-btn'>
-            ○
+          
+          <div id="favo_buttons_<%= photo.id %>">
+          <%= render partial: 'favorites/favo', locals: { photo: photo} %>
+  
           </div>
         </div>
       </div>
