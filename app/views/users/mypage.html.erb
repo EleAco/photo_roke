@@ -1,18 +1,36 @@
-<h1>これがマイページ</h1>
-<div class='user-profile-container'>
-  <div class='user-account-container'>
-  </div>
-  <div class='user-photo-container'>
-    <% @photos.each do |photo| %>
-      <%= image_tag photo.image%>
+<% @photos.each do |photo|%>
+<%= render 'shared/post_header'%>
 
-    <ul class ='nore_list'>
-      <li>
-        <%= link_to '編集', "/photos/#{photo.id}/edit", metohod: :get%>
-      <li>
-        <%= link_to '消去', "/photos/#{photo.id}", method: :delete %>
-      </li>
-    </ul>
-    <%end%>
+<div class='top-post-wrapper'>
+  <div class='top-post-container'>
+    <div class='post-user-container'>
+      <div class='post-user-header'>
+        <div class='post-user-icon'>
+          ○
+        </div>
+        <%= link_to photo.user.nickname, user_path(photo) , class: 'post-user-name'%>
+      </div>
+
+      <div class='post-main-photo'>
+        <div class='post-user-label'>
+            ○
+          </div>
+
+        <div class='post-user-main'>
+          <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+        </div>
+      </div>
+    </div>
+
+    <div class='post-footer-container'>
+    <div class='post-comment-btn'>
+      ○
+    </div>
+    
+    <div id="favo_buttons_<%= photo.id %>">
+      <%= render partial: 'favorites/favo', locals: { photo: photo} %>
+    </div> 
   </div>
 </div>
+
+<% end %>
