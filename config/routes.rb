@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   get 'favorites/create'
   get 'favorites/destroy'
   devise_for :users
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
   resources :photos do
     resources :comments, only: :create
     resource :favorites, only: [:create, :destroy]
-    collection do
+    collection  do
       get 'search'
     end
   end
@@ -25,5 +27,8 @@ Rails.application.routes.draw do
     member do
       get 'mypage'
     end
+    resources :relationships, only: [:create, :destroy]
+    get :follows, on: :member
+    get :followers, on: :member
   end
 end
