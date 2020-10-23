@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @photo = Photo.find(params[photo_id])
+    @photo = Photo.find(params[:photo_id])
     favorite = Favorite.find_by(photo_id: params[:photo_id], user_id: current_user.id)
     favorite.destroy
   end
