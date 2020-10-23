@@ -11,12 +11,12 @@
 
   <div class='top-post-wrapper'>
     <div class='top-post-container'>
-      <div class='post-user-container'>
+      <div class='post-user-wrapper'>
         <div class='post-user-header'>
           <div class='post-user-icon'>
             ○
           </div>
-          <%= link_to photo.user.nickname, user_path(photo) , class: 'post-user-name'%>
+          <%= link_to photo.user.nickname, user_path(photo.user.id) , class: 'post-user-name'%>
         </div>
 
         <div class='post-main-photo'>
@@ -28,19 +28,20 @@
             <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
           </div>
         </div>
-      </div>
 
-      <div class='post-footer-container'>
-      <div class='post-comment-btn'>
-        ○
+        <div class='post-footer-container'>
+          <div class='post-comment-btn'>
+            ○
+          </div>
+        
+          <div id="favo_buttons_<%= photo.id %>">
+            <%= render partial: 'favorites/favo', locals: { photo: photo} %>
+          </div> 
+        </div>
       </div>
-      
-      <div id="favo_buttons_<%= photo.id %>">
-        <%= render partial: 'favorites/favo', locals: { photo: photo} %>
-      </div> 
     </div>
-  </div>
 
+      
   <% end %>
 <%# <div class='post-btn'>
   <%= link_to image_tag('new.png', class: "post-icon"),'/photos/new'%>

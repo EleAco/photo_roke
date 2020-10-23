@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def mypage
     @photos = current_user.photos.order("created_at DESC")
+    @page_name ="マイページ"
   end
 
 end
