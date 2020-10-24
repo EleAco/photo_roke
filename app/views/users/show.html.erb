@@ -29,16 +29,21 @@
               <div class='post-comment-btn'>
                 ○
               </div>
+
               <div class='post-favo-btn'>
-                <p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
-                <p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
-                <% if current_user != @user %>
-                    <% if @user.followed_by?(current_user) %>
-                        <p><%=link_to "フォロー済み", user_relationship_path(@user.id), method: :delete %></p>
-                    <% else %>
-                        <p><%=link_to "フォローする", user_relationships_path(@user.id), method: :post %></p>
-                    <% end %>
-                <% end %>
+
+              <div class="follower">
+                  <%= link_to followers_user_path(@user.id) do %>
+                      <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+                  <% end %>
+              </div>
+              <div class="follow">
+                  <%= link_to following_user_path(@user.id) do %>
+                            <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
+                  <% end %>
+              </div>
+              <div>
+                  <%= render "follow_form" %>
               </div>
             </div>
         
