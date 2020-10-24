@@ -18,3 +18,7 @@ function successCallback(position){
 function errorCallback(error){
   alert("位置情報が取得できませんでした");
 };
+
+(function() {
+  console.log("OK");
+});
