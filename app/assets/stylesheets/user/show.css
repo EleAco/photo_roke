@@ -1,0 +1,59 @@
+.user-profile-container {
+  background-color: lawngreen;
+  height: 100vh;
+}
+
+.user-photo-container {
+  background-color: darkkhaki;
+  height: 100%;
+}
+
+.user-account-container {
+  background-color: hotpink;
+  height: calc(100vh - 70%);
+  padding-top: calc(100vh - 85vh);
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: calc(100vw - 25vw);
+  margin: auto;
+}
+
+.user-header-icon {
+  background-color: deeppink;
+  width:115px;
+  height:115px;
+  object-fit:cover;
+  border-radius:50%;
+  object-position:0px 0px;
+  position: absolute;
+  left: 9%;
+}
+
+.user-header-profile {
+  background-color: gold;
+  position: absolute;
+  width: 21%;
+  height: 40%;
+  right: 60%;
+
+}
+
+.usre-profile-text {
+  background-color: green;
+}
+
+.follow-container {
+  position: absolute;
+  right: 50%;
+  bottom: 10%;
+}
+
+.follower {
+ position: absolute; 
+ right: 44%;
+}
+
+.follow {
+ position: absolute;
+}
