@@ -12,6 +12,8 @@
         </div>
       </div>
 
+      <div id = "image-list"> </div>
+
       <div class='post-map-item'>
 
         <div class ='photo-map'>
@@ -71,7 +73,7 @@
             });
           }
           </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY_KEY'] %>&callback=initMap" async defer></script>
         </div>
 
         <div class="center">
@@ -97,4 +99,5 @@
         <%= f.submit "投稿する" ,class: 'post-new'%>
       </div>
     <% end %>
+    <%= image_tag @photo.image, id: 'image' if @photo.image.present? %>
 </div>
