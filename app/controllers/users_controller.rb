@@ -26,12 +26,14 @@ class UsersController < ApplicationController
     #@userがフォローしているユーザー
     @user  = User.find(params[:id])
     @users = @user.following
+    @page_name ="フォロー 一覧"
 end
 
 def followers
     #@userをフォローしているユーザー
     @user  = User.find(params[:id])
     @users = @user.followers
+    @page_name ="フォワー 一覧"
 end
 
 end

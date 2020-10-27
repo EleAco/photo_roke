@@ -1,9 +1,13 @@
+<%= render 'shared/post_header'%>
+
 <div class='followers-user-wrapper'>
   <% @users.each do |user| %>
   <div class='followers-user-container'>
     <div class='followers-user-icon'>
     </div>
-    <%= link_to user.nickname, user_path(user.id)%>
+    <div class ='follwores-name-container'>
+      <%= link_to user.nickname, user_path(user.id), class:"follwores-user-nickname"%>
+    </div>
   </div>
   <% end %>
 </div>
