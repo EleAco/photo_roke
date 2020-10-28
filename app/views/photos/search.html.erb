@@ -1,9 +1,25 @@
-<%= form_with(url: search_photos_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-<div class="contents row">
-  <% @photos.each do |photo| %>
-    <%= render partial: "photo", locals: { photo: photo } %>
+<%= render 'shared/post_header'%>
+<div class="search-container">
+  <%= form_with(url: search_photos_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
   <% end %>
+</div>
+
+<div class='top-post-wrapper'>
+  <% if @photos.present?%>
+    <% @photos.each do |photo| %>
+      <%= render "photo", photo: photo%>
+    <% end %>
+  <% else %>
+<div class='search-new-container'>
+  <h1 class='search-nill-text'> 検索しましたが、まだ誰も投稿していません…<br>
+  あなたが1番最初の投稿者になりませんか？？
+  </h1>
+  <%= link_to "投稿する", "/photos/new", class: 'search-new-btn'%>
+</div>
+  <% end %>
+
+  
+
 </div>

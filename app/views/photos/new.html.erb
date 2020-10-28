@@ -3,8 +3,10 @@
 
   
   <div class='new-post-wrapper'>
-
-
+    <%= form_with(model: @photo, local: true) do |f| %>  
+      <div class='photo-title-container'>
+      <%= f.text_field :title, class: "photo-title", placeholder: "作品のタイトル(必須20文字まで)", maxlength: "20"%>
+      </div>
       <div class='post-photo-item'>
         <div class="post-photo-upload">
           <p>
@@ -94,7 +96,8 @@
       </div>
 
       <div class='post-introduction-item'>
-        <%= f.text_area :explanation, class:"introduction-text" %>
+        <%= f.text_area :explanation, class:"introduction-text", placeholder: "写真の場所の説明や、どのような機材を使って撮影したか共有してみよう！(1,000文字まで入力できます)
+        例) 福岡タワーを海側からFUJIFILMのX-Pro2の16mmレンズで撮影しました！この辺りは、バスしか近くまで来れないので車で来ることをオススメします！" %>
       </div>
 
       <div class='post-new-btn'>
