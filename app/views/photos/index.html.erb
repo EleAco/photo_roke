@@ -6,46 +6,11 @@
   <% end %> 
   </div>
 
-
-  <% @photo.each do |photo|%>
-
+ <% @photo.each do |photo|%>
   <div class='top-post-wrapper'>
-    <div class='top-post-container'>
-      <div class='post-user-wrapper'>
-        <div class='post-user-header'>
-          <div class='post-user-icon'>
-            ○
-          </div>
-          <%= link_to photo.user.nickname, user_path(photo.user.id) , class: 'post-user-name'%>
-        </div>
-
-        <div class='post-main-photo'>
-          <div class='post-user-label'>
-              ○
-            </div>
-
-          <div class='post-user-main'>
-            <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
-          </div>
-        </div>
-
-        <div class='post-footer-container'>
-          <div class='post-comment-btn'>
-            ○
-          </div>
-          <div id="favos_buttons_<%= photo.id %>">
-            <%= render partial: 'favorites/favo', locals: { photo: photo} %>
-          </div> 
-        </div>
-      </div>
-    </div>
-
-      
-  <% end %>
-<%# <div class='post-btn'>
-  <%= link_to image_tag('new.png', class: "post-icon"),'/photos/new'%>
-  <%# <h2 class='post-text'>投稿する</h2>
-</div>  %>
+      <%= render 'photo', photo: photo %>
+  </div>
+<% end %>    
 
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>投稿する</span>

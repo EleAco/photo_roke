@@ -41,12 +41,13 @@ class PhotosController < ApplicationController
 
   def search
     @photos = Photo.search(params[:keyword])
+    
   end
 
   private
 
   def photo_params
-    params.require(:photo).permit(:image, :explanation).merge(user_id: current_user.id)
+    params.require(:photo).permit(:image, :explanation, :title).merge(user_id: current_user.id)
   end
 
 

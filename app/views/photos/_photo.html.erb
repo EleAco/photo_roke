@@ -1,0 +1,29 @@
+<div class='top-post-container'>
+  <div class='post-user-wrapper'>
+    <div class='post-user-header'>
+      <div class='post-user-icon'>
+        ○
+      </div>
+      <%= link_to photo.user.nickname, user_path(photo.user.id) , class: 'post-user-name'%>
+    </div>
+
+    <div class='post-main-photo'>
+      <div class='post-user-label'>
+          ○
+        </div>
+
+      <div class='post-user-main'>
+        <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+      </div>
+    </div>
+
+    <div class='post-footer-container'>
+      <div class='post-comment-btn'>
+        ○
+      </div>
+      <div id="favos_buttons_<%= photo.id %>">
+        <%= render partial: 'favorites/favo', locals: { photo: photo} %>
+      </div> 
+    </div>
+  </div>
+</div>
