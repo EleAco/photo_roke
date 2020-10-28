@@ -19,11 +19,14 @@
 
     <div class='post-footer-container'>
       <div class='post-comment-btn'>
-        ○
+        <%= link_to image_tag('comment.png', class: 'comment-logo'),user_path(photo.user.id)%>
+        <%= photo.comments.count%>
       </div>
+
       <div id="favos_buttons_<%= photo.id %>">
         <%= render partial: 'favorites/favo', locals: { photo: photo} %>
       </div> 
+
     </div>
   </div>
 </div>
