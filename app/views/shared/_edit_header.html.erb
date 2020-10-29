@@ -1,0 +1,48 @@
+<div class='top-header'>
+
+  <%#ロゴの情報が入る%>
+  <div class='photoroke-icon'>
+    <a href="/">
+      <img class='photoroke-icon-photo'src="/assets/Photoroke_logo.svg">
+    </a>
+  </div>
+
+<%#ページの名前が入る%>
+  <div class='top-page-name'>
+    <h2 class='page-name'> 
+      プロフィール変更
+    </h2>
+  </div>
+
+<%# ログアウト %>
+  <div class='logout-container'>
+    <div class='logout-btn'>
+      <%= link_to image_tag('exit.png', class: "logout-icon"), destroy_user_session_path, method: :delete %>
+    </div>
+    <span class='logout-text'>ログアウト</span>
+  </div>
+    
+<%# マイページ %>
+  <div class='mypage-container'>
+    <div class='mypage-btn'>
+      <%= link_to image_tag('human.png', class: "human-icon"), "/users/#{current_user.id}/mypage"  %>
+    </div>
+    <span class='mypage-text'><%= current_user.nickname %></span>
+  </div>
+
+<%# ハンバーガーアイコン %>
+  <%# <div class='hamburger'>
+   <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown">
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content">ここに中身を入れる
+        <div class='logout-button'>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        <%# </div>
+        <div class='my-page-button'>
+        </div>
+      </div>
+    </div>
+  </div> %> 
+</div>
