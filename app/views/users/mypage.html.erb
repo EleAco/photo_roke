@@ -1,36 +1,78 @@
-<% @photos.each do |photo|%>
-<%= render 'shared/post_header'%>
+<%= render 'shared/top_header'%>
 
-<div class='top-post-wrapper'>
-  <div class='top-post-container'>
-    <div class='post-user-container'>
-      <div class='post-user-header'>
-        <div class='post-user-icon'>
-          ○
-        </div>
-        <%= link_to photo.user.nickname, user_path(photo) , class: 'post-user-name'%>
+<div class='user-profile-container'>
+  <div class='user-account-container'>
+    <div class='user-header-icon'>
+      <% if @user.avatar.attached?%>
+        <%= image_tag @user.avater, class:'avatar'%>
+      <%else%>
+        <%= image_tag ("human.png"), class:'avatar'%>
+      <% end %>
+    </div>
+    <div class='user-header-profile'>
+      <p class='user-profile-text'>
+      ここに紹介文が入ります
+      </p>
+    </div>
+    <div class='follow-container'>
+        <%= render "follow_form" %>
+    </div>
+    <div class="follower">
+        <%= link_to followers_user_path(@user.id) do %>
+            <h5 style="color: black;">フォロワー<%= @user.followers.count %>人</h5>
+        <% end %>
+    </div>
+    <div class="follow">
+        <%= link_to following_user_path(@user.id) do %>
+                  <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
+        <% end %>
+    </div>
+
+    <div class='accbox'>
+        <!--ラベル1-->
+      <label for="label1">
+        <%= image_tag 'setting.png' %>
+      </label>
+      <input type="checkbox" id="label1" class="cssacc" />
+      <div class="accshow">
+        <!--ここに隠す中身-->
+        <%= link_to 'プロフィール編集', edit_user_registration_path%><br>
+        <%= link_to 'アカウント消去', user_registration_path, method: :delete %>
       </div>
+      <!--//ラベル1-->
+    </div>
+  </div>
 
-      <div class='post-main-photo'>
-        <div class='post-user-label'>
-            ○
+  <div class='user-photo-container'>  
+    <% @photos.each do |photo| %>
+      <div class='top-post-wrapper'>
+        <div class='top-post-container'>
+          <div class='post-user-container'>
+            <div class='post-user-header'>
+              <div class='post-user-icon'>
+                ○
+              </div>
+              <%= link_to photo.user.nickname, user_path(photo) , class: 'post-user-name'%>
+            </div>
+
+            <div class='post-main-photo'>
+              <div class='post-user-label'>
+                  ○
+                </div>
+
+              <div class='post-user-main'>
+                <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
+              </div>
+            </div>
+
+            <div class='post-footer-container'>
+              <div class='post-comment-btn'>
+                ○
+            </div>
+        
+          <% end %>
           </div>
-
-        <div class='post-user-main'>
-          <%= image_tag photo.image.variant(resize:'1920x1920').processed, class: 'user-photo'%>
         </div>
       </div>
-    </div>
-
-    <div class='post-footer-container'>
-    <div class='post-comment-btn'>
-      ○
-    </div>
-    
-    <div id="favo_buttons_<%= photo.id %>">
-      <%= render partial: 'favorites/favo', locals: { photo: photo} %>
-    </div> 
   </div>
 </div>
-
-<% end %>

@@ -3,6 +3,11 @@
 <div class='user-profile-container'>
   <div class='user-account-container'>
     <div class='user-header-icon'>
+      <% if @user.avatar.attached?%>
+        <%= image_tag @user.avater, class:'avatar'%>
+      <%else%>
+        <%= image_tag ("human.png"), class:'avatar'%>
+      <% end %>
     </div>
     <div class='user-header-profile'>
       <p class='user-profile-text'>
@@ -21,6 +26,20 @@
         <%= link_to following_user_path(@user.id) do %>
                   <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
         <% end %>
+    </div>
+
+    <div class='accbox'>
+        <!--ラベル1-->
+      <label for="label1">
+        <%= image_tag 'setting.png' %>
+      </label>
+      <input type="checkbox" id="label1" class="cssacc" />
+      <div class="accshow">
+        <!--ここに隠す中身-->
+        <%= link_to 'プロフィール編集', edit_user_registration_path%><br>
+        <%= link_to 'アカウント消去', user_registration_path, method: :delete %>
+      </div>
+      <!--//ラベル1-->
     </div>
   </div>
 
