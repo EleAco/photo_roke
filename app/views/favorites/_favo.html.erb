@@ -1,8 +1,8 @@
 <% if  current_user.id != photo.user_id%>
     <% if photo.favorited_by?(current_user) %>
-        <p><span>お気に入り解除: </span><%=link_to photo.favorites.count, "/photos/#{photo.id}/favorites", method: :delete, remote: true %></p>
+        <p><%= link_to image_tag('heart_in.png', class: 'heart'), "/photos/#{photo.id}/favorites", method: :delete, remote: true %> <span> <%=photo.favorites.count%> </span> </p>
     <% else %>
-        <p><span>お気に入り登録: </span><%=link_to photo.favorites.count, "/photos/#{photo.id}/favorites", method: :post, remote: true %></p>
+        <p><%= link_to image_tag('heart_out.png', class: 'heart'), "/photos/#{photo.id}/favorites", method: :post, remote: true %> <span> <%= photo.favorites.count %> </span> </p>
     <% end %>
 <% else %>
     <p><span>お気に入り数: </span><%= photo.favorites.count %></p>
