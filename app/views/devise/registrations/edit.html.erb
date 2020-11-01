@@ -5,8 +5,16 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="edit-wrapper">
-    <div id="avatar-list">
-    </div>
+    <% if @user.avatar.attached?%>
+        <%= image_tag @user.avatar, class:'edit-avatar'%>
+        <div id="avatar-list"></div>
+    <%else%>
+        <div class='else-avatar-container'>
+          <%= image_tag ("avatar.png"), class:'else-edit-avatar'%>
+          <div id="avatar-list"></div>
+        </div>
+    <% end %>
+     
     <p class="edit-avatar-text">
       クリックして写真をアップロード
     </p>
