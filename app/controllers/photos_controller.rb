@@ -28,6 +28,7 @@ class PhotosController < ApplicationController
   def destroy
     photo = Photo.find(params[:id])
     photo.destroy
+    redirect_to root_path
   end
 
   def edit
