@@ -1,0 +1,41 @@
+.photo-accbox {
+  margin: 2em 0;
+  padding: 0;
+  max-width: 400px;
+  position: absolute;
+}
+
+
+.photo-accbox label {
+  display: block;
+  margin: 1.5px 0;
+  padding : 11px 12px;
+  color :#2f8fcf;
+  font-weight: bold;
+  background :#a4cbf3;
+  cursor :pointer;
+  transition: all 0.5s;
+}
+
+.photo-accbox label:hover {
+  background :#85baef;
+}
+
+.photo-accbox input {
+  display: none;
+}
+
+.photo-accbox .photo-accshow {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.photo-cssacc:checked + .photo-accshow {
+  height: auto;
+  padding: 5px;
+  background: #eaeaea;
+  opacity: 1;
+}
