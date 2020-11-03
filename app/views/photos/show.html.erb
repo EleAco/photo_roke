@@ -1,35 +1,74 @@
 <%= render 'shared/top_header'%>
+<div class='show-post-wrapper'>
+  <div class='top-post-container'>
+    <div class='post-user-wrapper'>
+      <div class='post-user-header'>
+        <div class='user-icon-container'>
+          <div class='post-user-icon'>
+            <% if @photo.user.avatar.attached?%>
+            <%= image_tag user.avater, class:'avatar'%>
+            <%else%>
+            <%= image_tag ("human.png"), class:'avatar'%>
+            <% end %>
+          </div>
 
-<div class='photo-show-container'>
-  <div class='user-profile'>
-    <div class='user-image'>
-    </div>
-    <div class='user-introduction'>
-    </div>
-    <div class='user-follow-btn'>
-      フォローする
+          <div class='photo-user-nickname'>
+            <% if current_user.id == @photo.user_id %>
+              <%= @photo.user.nickname %>
+            <% else %>
+              <%= link_to @photo.user.nickname, user_path(@photo.user.id) , class: 'post-user-name'%>
+            <% end %>
+          </div>
+        </div>
+        <p class='photo-title'><%= @photo.title %></p>
+      </div>
+      <div class='post-main-photo'>
+
+        <div class='post-user-main'>
+          <%= link_to image_tag(@photo.image.variant(resize:'1920x1080').processed, class: 'user-photo'), photo_path(@photo.id)%>
+        </div>
+      </div>
+
+      <div class='post-footer-container'>
+      <div class='post-comment-btn'>
+        <%= link_to image_tag('comment.png', class: 'comment-logo'),photo_path(@photo.id)%>
+        <%= @photo.comments.count%>
+      </div>
+
+      <div id="favos_buttons_<%= @photo.id %>">
+        <%= render partial: 'favorites/favo', locals: { photo: @photo} %>
+      </div>
     </div>
   </div>
 
-  <div class='user-show-contailer'>
-    <div class='user-show-name'>
-      <%= @photo.user.nickname%>
-    </div>
-    <%= image_tag @photo.image, class: 'user-show-photo' %>
-    <%= form_with(model: [@photo, @comment], local: true) do |form| %>
-      <%= form.text_area :text, placeholder: "コメントする"%>
-      <%= form.submit "SEND"%>
-    <% end %>
-
-    <div class='comments-table-container'>
-      <% if @comments %>
-        <% @comments.each do |comment|%>
-          <p>
+  <div class='show-map-container'>
+  </div>
+  
+  <div class='comments-table-container'>
+    <% if @comments %>
+      <% @comments.each do |comment|%>
+        <% if current_user.id == comment.user_id%>
+          <div class='comment-table-container'>
+            <strong class='comment-table-nickname'><%= comment.user.nickname %>:</strong>
+            <p class='comment-table-text'>
+              <%= comment.text %>
+            </p>
+          </div>
+        <% else %>
+          <p class='comment-table-container'>
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>:<strong>
-            <%= comment.text%>
+            <%= comment.text %>
           </p>
-        <%end%>
+        <% end %>
       <%end%>
-    </div>
+    <%end%>
   </div>
+
+  <%= form_with(model: [@photo, @comment], local: true, class: 'comments-send-container') do |form| %>
+    <%= form.text_area :text, placeholder: "投稿者にコメントを送ってみよう！", class: 'comments-text-area'%>
+    <div class='comment-submit-container'>
+      <%= form.submit "送信", class: 'comments-text-submit'%>
+    </div>
+  <% end %>
+
 </div>
