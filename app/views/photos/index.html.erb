@@ -1,16 +1,16 @@
-  <%= render 'shared/top_header'%>
-  <div class="search-container">
-    <%= form_with(url: search_photos_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-  <% end %> 
-  </div>
+<%= render 'shared/top_header'%>
+<div class="search-container">
+  <%= form_with(url: search_photos_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+<% end %> 
+</div>
 
- <% @photo.each do |photo|%>
-  <div class='top-post-wrapper'>
-      <%= render 'photo', photo: photo %>
-  </div>
-<% end %>    
+<div class='top-post-wrapper'>
+  <% @photo.each do |photo|%>
+    <%= render 'photo', photo: photo %>
+  <% end %>    
+</div>
 
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>投稿する</span>
