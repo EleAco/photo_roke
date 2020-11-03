@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
-  before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_parameters, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -22,10 +22,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    if account_update_params[:avatar].present?
-      @user.avatar.attach(account_update_params[:avatar])
-    end
     super
+    # if account_update_params[:avatar].present?
+    #   @user.avatar.attach(account_update_params[:avatar])
+    # end
+    # @user.update(account_update_params)
   end
 
   # DELETE /resource
@@ -50,14 +51,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:profile, :avatar])
+
+  def configure_account_update_parameters
+    devise_parameter_sanitizer.permit(:account_update, keys: [:profile])
   end
 
-  def user_params
-    params.require(:user)
-          .permit(:profile, :abatar)
-  end
+  # def user_params
+  #   params.require(:user)
+  #         .permit(:profile, :abatar)
+  # end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
