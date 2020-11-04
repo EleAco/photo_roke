@@ -10,6 +10,14 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
 
+  with_options presence: true do |i|
+    i.validates :nickname
+    i.validates :email
+    i.validates :encrypted_password
+  end
+
+  validates :password, presence: true, on: :create
+
   #フォローしているかを確認するメソッド
   def following?(user)
     following_relationships.find_by(following_id: user.id)
@@ -47,13 +55,19 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable
 
-  with_options presence: true do |i|
-    i.validates :nickname
-    i.validates :email
-    i.validates :password
-    i.validates :encrypted_password
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
   end
 
   PASSWORD_REGEX =  /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
