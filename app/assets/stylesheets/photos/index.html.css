@@ -1,5 +1,5 @@
 .search-container {
-  padding-top: 20vh;
+  padding-top: 15vh;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
 
 .top-post-wrapper {
   width: 75vw;
-  height: 100vh;
+  height: 90vh;
   margin: auto;
   padding-top: 5vh;
   /* flex-direction: column; */
@@ -59,6 +59,7 @@
 .user-icon-container {
   left: 40px;
   height: 100%;
+  width: calc(100% - 80%);
   margin-top: 5px;
   position: absolute;
 }
@@ -71,15 +72,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .photo-user-nickname{
   text-align: center;
+  width: 100%;
+  font-size: 13px;
 }
 
 .photo-title{
   margin: auto;
-  font-size: 20px;
+  font-size: 20px;;
 }
 
 .avatar{

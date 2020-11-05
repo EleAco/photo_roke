@@ -11,9 +11,10 @@
 .user-account-container {
   background-color: hotpink;
   height: calc(100vh - 70%);
-  padding-top: calc(100vh - 85vh);
+  padding-top: calc(100vh - 90vh);
   display: flex;
   position: relative;
+  justify-content: space-around;
   align-items: center;
   width: calc(100vw - 25vw);
   margin: auto;
@@ -26,16 +27,15 @@
   object-fit:cover;
   border-radius:50%;
   object-position:0px 0px;
-  position: absolute;
-  left: 9%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-header-profile {
   background-color: gold;
-  position: absolute;
-  width: 21%;
-  height: 40%;
-  right: 60%;
+  width: calc(100% - 70%);
+  height: calc(100% - 70%);
 
 }
 
@@ -43,27 +43,13 @@
   background-color: green;
 }
 
-.follow-container {
-  position: absolute;
-  right: 50%;
-  bottom: 10%;
-}
-
-.follower {
- position: absolute; 
- right: 44%;
-}
-
-.follow {
- position: absolute;
-}
 
 .accbox {
   margin: 2em 0;
   padding: 0;
   max-width: 400px;
-}
 
+}
 
 .accbox label {
   display: block;

@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
   
   def index
     @photo = Photo.all.order('created_at DESC')
+    @page_name ='みんなの投稿'
   end
 
   def new
@@ -23,6 +24,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @comment = Comment.new
     @comments = @photo.comments.includes(:user)
+    @page_name = @photo.title
   end
 
   def destroy
