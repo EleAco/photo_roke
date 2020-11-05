@@ -2,14 +2,6 @@
   margin: 0px; 
 }
 
-.top-page-header {
-  width: 100vw;
-  height: 15vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
 .photoroke-icon{
   height: 90%;
   margin-top: 10px;
@@ -21,73 +13,54 @@
   height: 100%;
 }
 
-/* 新規登録 */
-.sign-up-button {
-  height: 50%;
+.sign-up-container{
   position: absolute;
-  right: 60px;
+  right: calc(100% - 89%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.sign-up {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 8px 10px 5px 10px;
-  text-decoration: none;
-  color: #00ffea;
-  background: #dafcff;
-  border-bottom: solid 4px #FFA000;
-  border-radius: 15px 15px 0 0;
-  transition: .4s;
+.sing-up-icon{
+  width: 40px;
 }
 
-.sign-up:hover {
-  background: #ffc25c;
-  color: #FFF;
+.sign-up-text{
+  margin-right: 4px;
 }
 
-/* 簡単ログイン */
-.gest-button {
-  height: 50%;
+.log-in-container{
+  flex-direction: column;
+  align-items: center;
+  display: flex;
   position: absolute;
-  right: 343px;
+  right: calc(100% - 96%);
+  align-items: center;
 }
 
-.gest {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 8px 10px 5px 10px;
-  text-decoration: none;
-  color: #FFA000;
-  background: #fff1da;
-  border-bottom: solid 4px #FFA000;
-  border-radius: 15px 15px 0 0;
-  transition: .4s;
+.log-in-icon{
+  width: 40px;
 }
 
-/* ログイン */
+.log-in-text{
+  text-align: center;
+  margin-left: 12px;
+}
 
-.login-button {
-  height: 50%;
+.gest-container{
+  flex-direction: column;
+  align-items: center;
+  display: flex;
   position: absolute;
-  right: 200px;
+  align-items: center;
+  right: calc(100% - 83%);
 }
 
-.login {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  padding: 8px 10px 5px 10px;
-  text-decoration: none;
-  color: #FFA000;
-  background: #fff1da;
-  border-bottom: solid 4px #FFA000;
-  border-radius: 15px 15px 0 0;
-  transition: .4s;
+.gest-icon{
+  width: 40px;
 }
 
-.login:hover {
-  background: #ffc25c;
-  color: #FFF;
+.gest-text{
+  text-align: center;
+  margin-left: 12px;
 }
