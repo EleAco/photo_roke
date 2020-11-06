@@ -16,6 +16,8 @@ class User < ApplicationRecord
     i.validates :encrypted_password
   end
 
+  validates :nickname, length: { minimum: 7 }
+
   validates :password, presence: true, on: :create
 
   #フォローしているかを確認するメソッド
