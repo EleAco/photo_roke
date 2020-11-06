@@ -6,13 +6,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    @page_name = "新規登録ページ"
     super
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @page_name = "新規登録ページ"
+    super
+  end
 
   # GET /resource/edit
   def edit
