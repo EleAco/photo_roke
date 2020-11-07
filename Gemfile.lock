@@ -82,6 +82,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.2)
+      devise (>= 4.7.1)
+    devise-i18n-views (0.3.7)
     erubi (1.9.0)
     ffi (1.13.1)
     globalid (0.4.2)
@@ -198,9 +201,6 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     warden (1.2.9)
@@ -233,6 +233,8 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  devise-i18n
+  devise-i18n-views
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   jquery-rails
@@ -246,7 +248,6 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers

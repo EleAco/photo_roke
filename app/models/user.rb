@@ -16,7 +16,7 @@ class User < ApplicationRecord
     i.validates :encrypted_password
   end
 
-  validates :nickname, length: { minimum: 7 }
+  validates :nickname, length: { maximum: 7 }
 
   validates :password, presence: true, on: :create
 
@@ -36,7 +36,7 @@ class User < ApplicationRecord
   end
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable
+         :recoverable, :rememberable, :validatable
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
