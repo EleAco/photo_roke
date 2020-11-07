@@ -17,8 +17,13 @@ class User < ApplicationRecord
   end
 
   validates :nickname, length: { maximum: 7 }
+  validates :profile, length: { maximum: 200 }
 
+  PASSWORD_REGEX =  /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  # validates_format_of :password, with: PASSWORD_REGEX
+  validates :password, format: {with: PASSWORD_REGEX}, allow_blank: true
   validates :password, presence: true, on: :create
+  
 
   #フォローしているかを確認するメソッド
   def following?(user)
@@ -51,8 +56,7 @@ class User < ApplicationRecord
     result
   end
 
-  PASSWORD_REGEX =  /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX
+
 
   def self.guset 
     find_or_create_by(email: 'guest@example.com') do |user|
