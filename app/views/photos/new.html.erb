@@ -13,6 +13,8 @@
             クリックして写真をアップロード
           </p>
           <%= f.file_field :image, class: 'photo-image' %>
+          <%= f.number_field :latitude, step: '0.000000000000001', id: "latitude-form" %>
+          <%= f.number_field :longitude, step: '0.0000001', id: "longitude-form" %>
         </div>
         <div id = "image-list", class='image-list'>
         </div>
@@ -77,14 +79,14 @@
             });
           }
           </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY_KEY'] %>&callback=initMap" async defer></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
         </div>
 
         <div class="center">
           <div class="btn-margin">
-              <button id="btn" class="btn btn-outline-primary btn-lg">
+              <div id="get-position-btn" class="btn btn-outline-primary btn-lg">
                   現在位置を取得する
-              </button>
+              </div>
           </div>
           <div class="txt-margin">
               <p>緯度：<span id="latitude">text</span><span>度</span></p>
@@ -101,7 +103,7 @@
       </div>
 
       <div class='post-new-btn'>
-        <%= f.submit "投稿する" ,class: 'post-new'%>
+        <%= f.submit "投稿する" ,class: 'post-new' %>
       </div>
     <% end %>
     <%= image_tag @photo.image, id: 'image' if @photo.image.present? %>

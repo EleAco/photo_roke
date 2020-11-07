@@ -50,7 +50,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:image, :explanation, :title).merge(user_id: current_user.id)
+    params.require(:photo).permit(:image, :explanation, :title, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
 
