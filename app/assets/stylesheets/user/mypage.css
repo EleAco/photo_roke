@@ -9,8 +9,8 @@
 }
 
 .user-account-container {
-  background-color: hotpink;
-  height: calc(100vh - 70%);
+  background-color: gainsboro;
+  height: 23vh;
   padding-top: calc(100vh - 90vh);
   display: flex;
   position: relative;
@@ -21,7 +21,6 @@
 }
 
 .user-header-icon {
-  background-color: deeppink;
   width:115px;
   height:115px;
   object-fit:cover;
@@ -33,14 +32,15 @@
 }
 
 .user-header-profile {
-  background-color: gold;
-  width: calc(100% - 70%);
-  height: calc(100% - 70%);
+  max-width: calc(100% - 70%);
+  height: calc(100% - 10%);
+  display: flex;
+  align-items: center;
 
 }
 
-.usre-profile-text {
-  background-color: green;
+.user-profile-text {
+  word-break: normal;
 }
 
 
@@ -48,18 +48,19 @@
   margin: 2em 0;
   padding: 0;
   max-width: 400px;
-
 }
 
 .accbox label {
   display: block;
   margin: 1.5px 0;
   padding : 11px 12px;
-  color :#2f8fcf;
   font-weight: bold;
-  background :#a4cbf3;
   cursor :pointer;
   transition: all 0.5s;
+}
+
+.accbox-image{
+  margin-left: 30%;
 }
 
 .accbox label:hover {
