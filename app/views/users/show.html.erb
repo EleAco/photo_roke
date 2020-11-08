@@ -4,7 +4,7 @@
   <div class='user-account-container'>
     <div class='user-header-icon'>
       <% if @user.avatar.attached?%>
-        <%= image_tag @user.avater, class:'avatar'%>
+        <%= image_tag @user.avatar, class:'avatar'%>
       <%else%>
         <%= image_tag ("human.png"), class:'avatar'%>
       <% end %>
