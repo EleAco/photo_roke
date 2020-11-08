@@ -4,6 +4,7 @@
   
   <div class='new-post-wrapper'>
     <%= form_with(model: @photo, local: true) do |f| %>  
+    <%= render 'shared/error_messages', model: f.object %>
       <div class='photo-title-container'>
       <%= f.text_field :title, class: "photo-title", placeholder: "作品のタイトル(必須20文字まで)", maxlength: "20"%>
       </div>
