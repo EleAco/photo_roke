@@ -6,7 +6,7 @@
         <div class='user-icon-container'>
           <div class='post-user-icon'>
             <% if @photo.user.avatar.attached?%>
-            <%= image_tag user.avater, class:'avatar'%>
+            <%= image_tag @photo.user.avatar, class:'avatar'%>
             <%else%>
             <%= image_tag ("human.png"), class:'avatar'%>
             <% end %>
