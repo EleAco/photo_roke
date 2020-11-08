@@ -21,6 +21,13 @@ ja:
               token: "はすでに使用されています"
             encrypted_password:
               blank: "が入力されていません"
+        
+        photo:
+          attributes:
+            title:
+              blank: "は必須です"
+            image:
+              blank: "は必須です"
 
     attributes:
       user:
@@ -32,6 +39,10 @@ ja:
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
         encrypted_password: "確認用パスワード"
+      
+      photo:
+        title: "作品のタイトル名"
+        image: "写真"
     models:
       user: "ユーザ"
   devise:

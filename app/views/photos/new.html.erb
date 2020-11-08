@@ -4,107 +4,108 @@
   
   <div class='new-post-wrapper'>
     <%= form_with(model: @photo, local: true) do |f| %>  
-      <div class='photo-title-container'>
-      <%= f.text_field :title, class: "photo-title", placeholder: "作品のタイトル(必須20文字まで)", maxlength: "20"%>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class='photo-title-container'>
+    <%= f.text_field :title, class: "photo-title", placeholder: "作品のタイトル(必須20文字まで)", maxlength: "20"%>
+    </div>
+    <div class='post-photo-item'>
+      <div class="post-photo-upload">
+        <p>
+          クリックして写真をアップロード
+        </p>
+        <%= f.file_field :image, class: 'photo-image' %>
+        <%= f.number_field :latitude, step: '0.000000000000001', id: "latitude-form" %>
+        <%= f.number_field :longitude, step: '0.0000001', id: "longitude-form" %>
       </div>
-      <div class='post-photo-item'>
-        <div class="post-photo-upload">
-          <p>
-            クリックして写真をアップロード
-          </p>
-          <%= f.file_field :image, class: 'photo-image' %>
-          <%= f.number_field :latitude, step: '0.000000000000001', id: "latitude-form" %>
-          <%= f.number_field :longitude, step: '0.0000001', id: "longitude-form" %>
-        </div>
-        <div id = "image-list", class='image-list'>
-        </div>
+      <div id = "image-list", class='image-list'>
       </div>
+    </div>
 
-      <div class='post-map-item'>
+    <div class='post-map-item'>
 
-        <div class ='photo-map'>
-          <h2>gmap</h2>
+      <div class ='photo-map'>
+        <h2>gmap</h2>
 
-          <!-- 地名入力用のinputを追加 -->
-          <input id="address" type="textbox" value="東京スカイツリー">
+        <!-- 地名入力用のinputを追加 -->
+        <input id="address" type="textbox" value="東京スカイツリー">
 
-          <!-- buttonをクリックしたらcodeAddressを実行-->
-          <input type="button" value="Encode" onclick="codeAddress()">
-          <div id='map'>
-          </div>
-
-          <style>
-          #map{
-            height: 300px;
-          }
-          </style>
-
-          <script>
-          /*
-          mapを関数の外で定義(codeAddressでも使うため)
-          geocoderを用意
-          */
-
-          let map
-          let geocoder
-
-          function initMap(){
-            // geocoderを初期化
-            geocoder = new google.maps.Geocoder()
-
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 35.710063, lng: 139.810700},
-            zoom: 8
-            });
-          }
-
-          function codeAddress(){
-            // 入力を取得
-            let inputAddress = document.getElementById('address').value;
-
-            // geocodingしたあとmapを移動
-            geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-              if (status == 'OK') {
-          // map.setCenterで地図が移動
-                map.setCenter(results[0].geometry.location);
-
-          // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-              } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-              }
-            });
-          }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+        <!-- buttonをクリックしたらcodeAddressを実行-->
+        <input type="button" value="Encode" onclick="codeAddress()">
+        <div id='map'>
         </div>
 
-        <div class="center">
-          <div class="btn-margin">
-              <div id="get-position-btn" class="btn btn-outline-primary btn-lg">
-                  現在位置を取得する
-              </div>
-          </div>
-          <div class="txt-margin">
-              <p>緯度：<span id="latitude">text</span><span>度</span></p>
-              <p>経度：<span id="longitude">???</span><span>度</span></p>
-          </div>
+        <style>
+        #map{
+          height: 300px;
+        }
+        </style>
+
+        <script>
+        /*
+        mapを関数の外で定義(codeAddressでも使うため)
+        geocoderを用意
+        */
+
+        let map
+        let geocoder
+
+        function initMap(){
+          // geocoderを初期化
+          geocoder = new google.maps.Geocoder()
+
+          map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.710063, lng: 139.810700},
+          zoom: 8
+          });
+        }
+
+        function codeAddress(){
+          // 入力を取得
+          let inputAddress = document.getElementById('address').value;
+
+          // geocodingしたあとmapを移動
+          geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+            if (status == 'OK') {
+        // map.setCenterで地図が移動
+              map.setCenter(results[0].geometry.location);
+
+        // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+              });
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+          });
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+      </div>
+
+      <div class="center">
+        <div class="btn-margin">
+            <div id="get-position-btn" class="btn btn-outline-primary btn-lg">
+                現在位置を取得する
+            </div>
         </div>
-        <%= javascript_pack_tag 'photo/new' %>
-
+        <%# <div class="txt-margin"> %>
+            <%# <p>緯度：<span id="latitude">text</span><span>度</span></p> %>
+            <%# <p>経度：<span id="longitude">???</span><span>度</span></p> %>
+        <%# </div> %>
       </div>
+      <%= javascript_pack_tag 'photo/new' %>
 
-      <div class='post-introduction-item'>
-        <%= f.text_area :explanation, class:"introduction-text", placeholder: "写真の場所の説明や、どのような機材を使って撮影したか共有してみよう！(1,000文字まで入力できます)
-        例) 福岡タワーを海側からFUJIFILMのX-Pro2の16mmレンズで撮影しました！この辺りは、バスしか近くまで来れないので車で来ることをオススメします！" %>
-      </div>
+    </div>
 
-      <div class='post-new-btn'>
-        <%= f.submit "投稿する" ,class: 'post-new' %>
-      </div>
-    <% end %>
-    <%= image_tag @photo.image, id: 'image' if @photo.image.present? %>
+    <div class='post-introduction-item'>
+      <%= f.text_area :explanation, class:"introduction-text", placeholder: "写真の場所の説明や、どのような機材を使って撮影したか共有してみよう！(1,000文字まで入力できます)
+      例) 福岡タワーを海側からFUJIFILMのX-Pro2の16mmレンズで撮影しました！この辺りは、バスしか近くまで来れないので車で来ることをオススメします！" %>
+    </div>
+
+    <div class='post-new-btn'>
+      <%= f.submit "投稿する" ,class: 'post-new' %>
+    </div>
+  <% end %>
+  <%= image_tag @photo.image, id: 'image' if @photo.image.present? %>
 </div>
