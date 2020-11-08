@@ -4,12 +4,11 @@
       <div class='user-icon-container'>
         <div class='post-user-icon'>
           <% if photo.user.avatar.attached?%>
-          <%= image_tag photo.user.avatar, class:'avatar'%>
+          <%= image_tag photo.user.avatar.variant(gravity: :center, resize:"80x80^", crop:"80x80+0+0").processed,  class:'photo-avatar'%>
           <%else%>
           <%= image_tag ("human.png"), class:'avatar'%>
           <% end %>
         </div>
-
         <div class='photo-user-nickname'>
           <% if current_user.id == photo.user_id %>
             <%= photo.user.nickname %>
