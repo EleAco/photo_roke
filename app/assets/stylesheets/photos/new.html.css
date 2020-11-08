@@ -2,7 +2,7 @@
   width: 75vw;
   height: 100vh;
   margin: auto;
-  padding-top: 15vh;
+  padding-top: 10vh;
 }
 
 .photo-title-container{
@@ -103,4 +103,16 @@ margin: 7vh 0px;
   justify-content: center;
   align-items: center;
   margin-bottom: 8vh;
+}
+
+#latitude-form{
+  width: 0px;
+  height: 0px;
+  border: none;
+}
+
+#longitude-form{
+  width: 0px;
+  height: 0px;
+  border: none;
 }
