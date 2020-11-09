@@ -4,17 +4,17 @@
     <% if @user.avatar.attached?%>
       <%= image_tag @user.avatar.variant(gravity: :center, resize:"160x160^", crop:"160x160+0+0").processed, class:'avatar'%>
     <%else%>
-      <%= image_tag ("human.png"), class:'avatar'%>
+      <%= image_tag ("avatar.png"), class:'mypage-avatar'%>
     <% end %>
   </div>
   <div class='user-header-profile'>
-    <% if @user.profile.empty?%>
-      <p class="profile-blank-text">
-        紹介文を設定してみよう！
-      </p>
-    <% else %>
+    <% if @user.profile.present?%>
       <p class='user-profile-text'>
         <%= @user.profile %>
+      </p>
+    <% else %>
+      <p class="user-profile-text">
+        右の歯車から紹介文を設定してみよう！
       </p>
     <% end %>
   </div>

@@ -18,6 +18,7 @@
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
+  border: 2px solid;
 }
 
 .edit-avatar-text{
@@ -64,21 +65,17 @@
 
 /* elseの場合 */
 .else-avatar-container{
-  background-color: lightseagreen;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  margin: auto;
-  margin-top: 25px;
+  width: 75vw;
   display: flex;
+  justify-content: center;
+  position: absolute;
 }
 
 .else-edit-avatar {
-background-color: blueviolet;
-width: 100%;
-height: 100%;
-object-fit: cover;
+width: 250px;
+height: 250px;
 border-radius: 50%;
+border: 2px solid;
 }
 
 .else-avatar{

@@ -6,7 +6,7 @@
           <% if photo.user.avatar.attached?%>
           <%= image_tag photo.user.avatar.variant(gravity: :center, resize:"80x80^", crop:"80x80+0+0").processed,  class:'photo-avatar'%>
           <%else%>
-          <%= image_tag ("human.png"), class:'avatar'%>
+          <%= image_tag ("avatar.png"), class:'avatar'%>
           <% end %>
         </div>
         <div class='photo-user-nickname'>
