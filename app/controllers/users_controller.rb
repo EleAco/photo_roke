@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @photos = @user.photos.order("created_at DESC")
     @favorite_photos = @user.favorite_photos
     # @photos = User.photos.order("created_at DESC")
+    @page_name="#{@user.nickname}さんのページ"
   end
 
   def mypage
