@@ -1,0 +1,7 @@
+.home-header{
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
