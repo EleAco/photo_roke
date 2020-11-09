@@ -1,0 +1,54 @@
+<div class='home-header'>
+
+  <%#ロゴの情報が入る%>
+  <div class='photoroke-icon'>
+    <a href="/">
+      <img class='photoroke-icon-photo'src="/assets/Photoroke_logo.svg">
+    </a>
+  </div>
+
+<%#ページの名前が入る%>
+  <div class='top-page-name'>
+    <h2 class='page-name'> 
+      <%= @page_name %>
+    </h2>
+  </div>
+
+<%# 新規登録 %>
+  <div class=sign-up-container>
+    <%= link_to image_tag('sign-up.png', class: 'sing-up-icon'), new_user_registration_path %>
+    <span class='sing-up-text'>新規登録</span>
+  </div>
+
+<%# ログイン %>
+  <div class='log-in-container'>
+    <%= link_to image_tag('log-in.png', class: 'log-in-icon'), new_user_session_path %>
+    <span class='log-in-text'>ログイン</span>
+  </div>
+
+<%# ゲストユーザーログイン %>
+  <div class='gest-container'>
+    <%= link_to image_tag('log-in.png', class: 'gest-icon'), users_guest_sign_in_path, method: :post %>
+    <span class='gest-text'>簡単ログイン</span>
+  </div>
+
+
+
+<%# ログアウト %>
+
+<%# ハンバーガーアイコン %>
+  <%# <div class='hamburger'>
+   <div id="nav-drawer">
+      <input id="nav-input" type="checkbox" class="nav-unshown">
+      <label id="nav-open" for="nav-input"><span></span></label>
+      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+      <div id="nav-content">ここに中身を入れる
+        <div class='logout-button'>
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
+        <%# </div>
+        <div class='my-page-button'>
+        </div>
+      </div>
+    </div>
+  </div> %> 
+</div>
