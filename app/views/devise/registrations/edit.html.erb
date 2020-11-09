@@ -6,8 +6,11 @@
 
   <div class="edit-wrapper">
     <% if @user.avatar.attached?%>
-        <%= image_tag @user.avatar, class:'edit-avatar'%>
-        <div id="avatar-list"></div>
+      <div class= 'true-avatar-container'>
+        <%= image_tag @user.avatar.variant(gravity: :center, resize:"320x320^", crop:"320x320+0+0").processed,  class:'edit-avatar'%>
+      </div>
+      <div id="avatar-list">
+      </div>
     <%else%>
         <div class='else-avatar-container'>
           <%= image_tag ("avatar.png"), class:'else-edit-avatar'%>
@@ -25,8 +28,8 @@
       <%= f.text_area :profile, class: 'edit-profile', placeholder: "プロフィールを編集してみよう！"%>
     </div>
 
-    <div class='post-new-btn'>
-    <%= f.submit "変更する" ,class: 'post-new'%>
+    <div class='edit-profile-btn'>
+    <%= f.submit "変更する" ,class: 'edit-btn'%>
     </div>
 
   </div>
