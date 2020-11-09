@@ -1,4 +1,4 @@
-<%= render 'shared/top_header'%>
+<%= render 'shared/post_header'%>
 
 <div class='user-profile-container'>
   <div class='user-account-container'>
@@ -15,7 +15,7 @@
       </p>
     </div>
     <div class='follow-container'>
-        <%= render "follow_form" %>
+        <%= render "follow_form", user: @user %>
     </div>
     <div class="follower">
         <%= link_to followers_user_path(@user.id) do %>
