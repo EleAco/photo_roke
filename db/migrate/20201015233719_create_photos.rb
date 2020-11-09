@@ -4,8 +4,8 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.text         :explanation,         null: false
       t.string       :title,               null: false
       t.integer      :user_id,             null: false, foreign_key: true
-      t.float        :latitude             null: false
-      t.float        :longitude            null: false
+      t.float        :latitude,            null: false
+      t.float        :longitude,           null: false
       t.timestamps   
     end
   end
