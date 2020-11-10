@@ -29,3 +29,28 @@
   color: red;
   margin-left: 100px;
 }
+
+.explanation-wrapper{
+  width: 100vw;
+  height: 100vh;
+}
+
+.photo-roke-img{
+  height: calc(100% - 75%);
+  width: 100%;
+  padding-top: 25px;
+}
+
+.photo-roke-text{
+  font-size: 70px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.photoroke-explanation-container{
+  height: calc(100% - calc(25% - 95px));
+}
+
+.map-illustration-container{
+
+}
