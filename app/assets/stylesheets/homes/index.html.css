@@ -63,9 +63,10 @@
 }
 
 .photoroke-explanation-container{
-  height: calc(100% - calc(46% - 95px));
+  height: calc(100% - calc(50% - 95px));
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .map-illustration-container{
@@ -79,6 +80,7 @@
   object-fit: none;
   border: 2px solid;
   border-radius: 25%;
+  background-color: gainsboro;
 }
 
 .exp-text{
@@ -100,5 +102,5 @@
   border: 2px solid;
   border-radius: 25%;
   position: absolute;
-  object-position: 27%;
+  object-position: 78%;
 }
