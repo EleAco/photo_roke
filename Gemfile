@@ -68,3 +68,7 @@ gem 'jquery-rails'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+# bootstropのエラーを解消するための記述
+gem 'therubyracer'
+gem 'less-rails'
