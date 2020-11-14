@@ -29,7 +29,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #   @user.avatar.attach(account_update_params[:avatar])
     # end
     # @user.update(account_update_params)
-    binding.pry
   end
 
   # DELETE /resource
