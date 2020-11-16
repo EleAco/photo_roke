@@ -70,7 +70,7 @@ gem 'jquery-rails'
 
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-
+gem "aws-sdk-s3", require: false
 # bootstropのエラーを解消するための記述
 gem 'therubyracer'
 gem 'less-rails'
