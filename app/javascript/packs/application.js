@@ -12,6 +12,7 @@ require("channels")
 require('jquery')
 require("bootstrap")
 require("./photo/new")
+require("./photo/map")
 require('./photo/preview')
 require('./registrations/preview')
 
