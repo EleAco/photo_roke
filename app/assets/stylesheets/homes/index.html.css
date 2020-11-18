@@ -54,6 +54,12 @@
   height: calc(100% - 75%);
   width: 100%;
   padding-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-roke-img img{
+  height: 100%;
 }
 
 .photo-roke-text{
