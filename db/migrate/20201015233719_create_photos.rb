@@ -1,7 +1,7 @@
 class CreatePhotos < ActiveRecord::Migration[6.0]
   def change
     create_table :photos do |t|
-      t.text         :explanation,         default: "0"
+      t.text         :explanation
       t.string       :title,               null: false
       t.integer      :user_id,             null: false, foreign_key: true
       t.float        :latitude,            default: 35.710063
