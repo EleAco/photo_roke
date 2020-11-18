@@ -7,7 +7,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :nickname,           null: false, uniqueness: true
       t.string :email,              null: false, uniqueness: true
       t.string :encrypted_password, null: false, default: ""
-      t.text   :profile
+      t.string :profile,                         default: "紹介文を右の歯車から設定してみよう！"
 
       ## Recoverable
       t.string   :reset_password_token
