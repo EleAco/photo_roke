@@ -4,6 +4,7 @@
 ![代替テキスト](https://user-images.githubusercontent.com/68630897/99758159-53411500-2b34-11eb-9ea6-8ed6e02c5231.png)
 
 ## 概要  
+![代替テキスト](https://user-images.githubusercontent.com/68630897/99803230-6e377780-2b7c-11eb-844b-50fc56766d57.gif)
 
 ## URL
 
