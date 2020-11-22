@@ -111,8 +111,30 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
     </div>
   </div>
+  
+  <div class='comments-table-container'>
+    <% if @comments %>
+      <% @comments.each do |comment|%>
+        <% if current_user.id == comment.user_id%>
+          <div class='comment-table-container'>
+            <strong class='comment-table-nickname'>
+              <%= comment.user.nickname %>
+              :
+              </strong>
+            <p class='comment-table-text'>
+              <%= comment.text %>
+            </p>
+          </div>
+        <% else %>
+          <p class='comment-table-container'>
+          <%= comment.text %>
+        <% end %>
+      <% end %>
+   <% end %>
+  </div>
 
   <%= form_with(model: [@photo, @comment], local: true, class: 'comments-send-container') do |form| %>
+
     <%= form.text_area :text, placeholder: "投稿者にコメントを送ってみよう！", class: 'comments-text-area'%>
     <div class='comment-submit-container'>
       <%= form.submit "送信", class: 'comments-text-submit'%>
