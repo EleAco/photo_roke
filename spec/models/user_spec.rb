@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規機能' do
     context '新規登録がうまく行く時' do
-      it 'nickname,email,password,password_confirmationが存在すれば登録できる' do
+      it 'nickname,email,password,encrypted_passwordが存在すれば登録できる' do
         expect(@user).to be_valid
       end
 
@@ -59,7 +59,7 @@ RSpec.describe User, type: :model do
         @user.password = 'te12'
         @user.password_confirmation = 'te12'
         @user.valid? 
-        expect(@user.errors.full_messages).to include('パスワード は6文字以上に設定して下さい。)')
+        expect(@user.errors.full_messages).to include('パスワード は6文字以上に設定して下さい。')
       end
 
       it 'passwordに英数字両方含まれていないと登録できない' do
@@ -71,7 +71,7 @@ RSpec.describe User, type: :model do
       it 'passwordが存在してもpassword_confirmationが空だと登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@user.errors.full_messages).to include("確認用パスワード とパスワードが一致しません")
       end
     end
   end
