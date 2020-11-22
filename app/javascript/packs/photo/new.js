@@ -14,6 +14,15 @@ function successCallback(position){
   var longitude = position.coords.longitude;
   document.getElementById("longitude").innerHTML = longitude;
   document.getElementById("longitude-form").value = longitude;
+
+  var latlng = new google.maps.LatLng(latitude, longitude);
+
+  var marker = new google.maps.Marker({
+    map: map,
+    position: latlng
+  });
+
+  map.setCenter(latlng);
 };
 
 // 取得に失敗した場合の処理
