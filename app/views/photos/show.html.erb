@@ -1,35 +1,34 @@
 <%= render 'shared/post_header'%>
-<div class='show-post-wrapper'>
-  <div class='top-post-container'>
-    <div class='post-user-wrapper'>
-      <div class='post-user-header'>
-        <div class='user-icon-container'>
-          <div class='post-user-icon'>
-            <% if @photo.user.avatar.attached?%>
-            <%= image_tag @photo.user.avatar, class:'avatar'%>
-            <%else%>
-            <%= image_tag ("avatar.png"), class:'avatar'%>
-            <% end %>
-          </div>
-
-          <div class='photo-user-nickname'>
-            <% if current_user.id == @photo.user_id %>
-              <%= @photo.user.nickname %>
-            <% else %>
-              <%= link_to @photo.user.nickname, user_path(@photo.user.id) , class: 'post-user-name'%>
-            <% end %>
-          </div>
+<div class='first-show-container'>
+  <div class='post-user-wrapper'>
+    <div class='post-user-header'>
+      <div class='user-icon-container'>
+        <div class='post-user-icon'>
+          <% if @photo.user.avatar.attached?%>
+          <%= image_tag @photo.user.avatar, class:'avatar'%>
+          <%else%>
+          <%= image_tag ("avatar.png"), class:'avatar'%>
+          <% end %>
         </div>
-        <p class='photo-title'><%= @photo.title %></p>
-      </div>
-      <div class='post-main-photo'>
 
-        <div class='post-user-main'>
-          <%= link_to image_tag(@photo.image.variant(resize:'1920x1080').processed, class: 'user-photo'), photo_path(@photo.id)%>
+        <div class='photo-user-nickname'>
+          <% if current_user.id == @photo.user_id %>
+            <%= @photo.user.nickname %>
+          <% else %>
+            <%= link_to @photo.user.nickname, user_path(@photo.user.id) , class: 'post-user-name'%>
+          <% end %>
         </div>
       </div>
+      <p class='photo-title'><%= @photo.title %></p>
+    </div>
+    <div class='post-main-photo'>
 
-      <div class='post-footer-container'>
+      <div class='post-user-main'>
+        <%= link_to image_tag(@photo.image.variant(resize:'1920x1080').processed, class: 'user-photo'), photo_path(@photo.id)%>
+      </div>
+    </div>
+
+    <div class='post-footer-container'>
       <div class='post-comment-btn'>
         <%= link_to image_tag('comment.png', class: 'comment-logo'),photo_path(@photo.id)%>
         <%= @photo.comments.count%>
@@ -40,6 +39,9 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class='second-show-container'>
 
   <div class='explanation-container'>
     <p class="explanation-text">
@@ -49,66 +51,66 @@
 
   <div class='show-map-container'>
     <div class ='photo-map'>
-          <h2>gmap</h2>
+      <h2>gmap</h2>
 
-          <!-- 地名入力用のinputを追加 -->
-          <input id="address" type="textbox" value="東京スカイツリー">
+      <!-- 地名入力用のinputを追加 -->
+      <input id="address" type="textbox" value="東京スカイツリー">
 
-          <!-- buttonをクリックしたらcodeAddressを実行-->
-          <input type="button" value="Encode" onclick="codeAddress()">
-          <div id='map'>
-          </div>
-
-          <style>
-          #map{
-            height: 300px;
-          }
-          </style>
-
-          <script>
-          /*
-          mapを関数の外で定義(codeAddressでも使うため)
-          geocoderを用意
-          */
-
-          let map
-          let geocoder
-
-          function initMap(){
-            // geocoderを初期化
-            geocoder = new google.maps.Geocoder()
-
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: 35.710063, lng: 139.810700},
-
-            zoom: 8
-            });
-          }
-
-          function codeAddress(){
-            // 入力を取得
-            let inputAddress = document.getElementById('address').value;
-
-            // geocodingしたあとmapを移動
-            geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-              if (status == 'OK') {
-          // map.setCenterで地図が移動
-                map.setCenter(results[0].geometry.location);
-
-          // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-              } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-              }
-            });
-          }
-          </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-        </div>
+      <!-- buttonをクリックしたらcodeAddressを実行-->
+      <input type="button" value="Encode" onclick="codeAddress()">
+      <div id='map'>
       </div>
+
+      <style>
+      #map{
+        height: 300px;
+      }
+      </style>
+
+      <script>
+      /*
+      mapを関数の外で定義(codeAddressでも使うため)
+      geocoderを用意
+      */
+
+      let map
+      let geocoder
+
+      function initMap(){
+        // geocoderを初期化
+        geocoder = new google.maps.Geocoder()
+
+        map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 35.710063, lng: 139.810700},
+
+        zoom: 8
+        });
+      }
+
+      function codeAddress(){
+        // 入力を取得
+        let inputAddress = document.getElementById('address').value;
+
+        // geocodingしたあとmapを移動
+        geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+          if (status == 'OK') {
+      // map.setCenterで地図が移動
+            map.setCenter(results[0].geometry.location);
+
+      // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+            var marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
+    </div>
+  </div>
 
   <%= form_with(model: [@photo, @comment], local: true, class: 'comments-send-container') do |form| %>
     <%= form.text_area :text, placeholder: "投稿者にコメントを送ってみよう！", class: 'comments-text-area'%>
@@ -116,5 +118,4 @@
       <%= form.submit "送信", class: 'comments-text-submit'%>
     </div>
   <% end %>
-
 </div>
