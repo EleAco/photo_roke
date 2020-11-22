@@ -14,6 +14,7 @@ class User < ApplicationRecord
     i.validates :nickname
     i.validates :email
     i.validates :encrypted_password
+    i.validates :password_confirmation
   end
 
   validates :nickname, length: { maximum: 7 }
