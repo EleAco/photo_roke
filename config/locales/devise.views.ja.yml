@@ -32,6 +32,7 @@ ja:
           attributes:
             title:
               blank: "は必須です"
+              too_long: "は20字以内で登録してください。"
             image:
               blank: "は必須です"
 
