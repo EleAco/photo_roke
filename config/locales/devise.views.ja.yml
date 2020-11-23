@@ -26,7 +26,6 @@ ja:
             password_confirmation:
               confirmation: "とパスワードが一致しません"
 
-
         
         photo:
           attributes:
@@ -35,6 +34,8 @@ ja:
               too_long: "は20字以内で登録してください。"
             image:
               blank: "は必須です"
+            explanation:
+              too_long: "は500文字以内で登録してください。"
 
     attributes:
       user:
@@ -50,6 +51,7 @@ ja:
       photo:
         title: "作品のタイトル名"
         image: "写真"
+        explanation: "説明文"
     models:
       user: "ユーザ"
   devise:
