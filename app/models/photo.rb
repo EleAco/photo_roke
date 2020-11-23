@@ -10,6 +10,7 @@ class Photo < ApplicationRecord
   end
 
   validates :title, length: {maximum:20}
+  validates :explanation, length: {maximum: 500}
 
 
   def favorited_by?(user)
