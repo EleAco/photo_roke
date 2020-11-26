@@ -11,14 +11,6 @@
       <%= @page_name %>
     </h2>
   </div>
-
-<%# ログアウト %>
-  <div class='logout-container'>
-    <div class='logout-btn'>
-      <%= link_to image_tag('exit.png', class: "logout-icon"), destroy_user_session_path, method: :delete %>
-    </div>
-    <span class='logout-text'>ログアウト</span>
-  </div>
     
 <%# マイページ %>
   <div class='mypage-container'>
@@ -26,6 +18,14 @@
       <%= link_to image_tag('human.png', class: "human-icon"), "/users/#{current_user.id}/mypage"  %>
     </div>
     <span class='mypage-text'><%= current_user.nickname %></span>
+  </div>
+
+<%# ログアウト %>
+  <div class='logout-container'>
+    <div class='logout-btn'>
+      <%= link_to image_tag('exit.png', class: "logout-icon"), destroy_user_session_path, method: :delete %>
+    </div>
+    <span class='logout-text'>ログアウト</span>
   </div>
 
 <%# ハンバーガーアイコン %>

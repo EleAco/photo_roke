@@ -64,3 +64,46 @@
   text-align: center;
   margin-left: 12px;
 }
+
+/* 600px〜959px：タブレット
+------------------------------ */
+@media screen and (min-width:600px) and (max-width:959px) {
+ 
+ 
+}
+ 
+ 
+/* 480px〜599px：SP横
+------------------------------ */
+@media screen and (min-width:480px) and (max-width:599px) { 
+ 
+ 
+}
+ 
+ 
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .home-header{
+   margin-top: 0px;
+   left: 0px;
+   justify-content: space-around;
+   background-color: snow;
+ }
+
+ .sign-up-container{
+  position: static;
+  right: 0px;
+ }
+
+ .log-in-container{
+  position: static;
+  right: 0px;
+ }
+
+ .gest-container{
+  position: static;
+  right: 0px;
+ }
+ 
+}

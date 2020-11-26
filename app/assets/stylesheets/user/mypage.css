@@ -91,3 +91,46 @@
   border-radius: 50%;
   border: 2px solid;
 }
+
+/* 600px〜959px：タブレット
+------------------------------ */
+@media screen and (min-width:600px) and (max-width:959px) {
+ 
+ 
+}
+ 
+ 
+/* 480px〜599px：SP横
+------------------------------ */
+@media screen and (min-width:480px) and (max-width:599px) { 
+ 
+ 
+}
+ 
+ 
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+  .user-account-container{
+    height: initial;
+    padding-top: 5vh;
+    width: 100vw;
+  }
+
+  .user-header-icon{
+    width: 85px;
+    height: 85px;
+  }
+  
+  .user-header-profile{
+    font-size: 10px;
+  }
+
+  .follow-wrapper{
+    font-size: 10px;
+  }
+
+  .accbox .accshow{
+    font-size: 10px;
+  }
+}
