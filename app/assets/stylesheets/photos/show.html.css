@@ -109,3 +109,26 @@
   transform: translateY(4px);
   border-bottom: none;
 }
+ 
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+  .first-show-container{
+    padding-top: 5vh;
+    height: 70vh;
+  }
+
+  .second-show-container{
+    height: initial;
+  }
+
+  .comment-submit-container{
+    height: initial;
+  }
+
+  .comments-text-submit{
+    width: 80%;
+    height: 100%;
+    padding: initial;
+  }
+}

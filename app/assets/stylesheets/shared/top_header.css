@@ -128,3 +128,56 @@
 .mypage-text{
   font-size: 12px;
 }
+
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .top-header{
+   justify-content: space-around;
+   height: 10vh;
+ }
+
+ .logout-container{
+   position: absolute;
+   right: 30px;
+   height: 100%;
+ }
+
+ .logout-btn{
+   height: 100%;
+ }
+
+ .logout-icon{
+   height: 90%;
+   margin-top: calc(100% - 90%);
+   width: initial;
+ }
+
+ .mypage-container{
+   height: 100%;
+   position: absolute;
+   right: 70px;
+ }
+
+ .logout-text{
+   display: none;
+ }
+
+ .human-icon{
+   height: 90%;
+   margin-top: calc(100% - 90%);
+ }
+
+ .photoroke-icon{
+   position: absolute;
+ }
+
+ .mypage-text{
+   display: none;
+ }
+
+ .mypage-btn{
+   height: 100%;
+ }
+
+}

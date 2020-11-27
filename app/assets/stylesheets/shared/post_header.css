@@ -1,0 +1,17 @@
+.post-header {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(247, 247, 247);
+}
+
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .post-header {
+   height: 5vh;
+ }
+}

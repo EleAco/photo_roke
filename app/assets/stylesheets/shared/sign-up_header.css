@@ -1,6 +1,6 @@
 .post-header {
   width: 100vw;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -40,4 +40,27 @@
 .sing-login:hover {
   background: #ffc25c;
   color: #FFF;
+}
+
+.sign-up-wrapper{
+  width: 75vw;
+  height: 100vh;
+  padding-top: 10vh;
+}
+ 
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+  .top-page-name{
+    display: none;
+  }
+
+  .sign-up-wrapper{
+    width: 100%;
+    height: 100%;
+  }
+
+  .post-header{
+    height: 5vh;
+  }
 }

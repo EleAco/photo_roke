@@ -124,3 +124,35 @@ margin: 7vh 0px;
   height: 0px;
   border: none;
 }
+
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .new-post-wrapper{
+   width: 95vw;
+   padding-top: 5vh;
+ }
+
+ .photo-title-container{
+   margin: 20px 0px;
+ }
+ 
+ .photo-title{
+   width: calc(100% - calc(20% + 20px ));
+ }
+
+ .post-new-btn{
+   margin-bottom: 4vh;
+ }
+
+ .post-photo-item{
+   height: 50%;
+ }
+
+ .post-photo-upload{
+   margin-bottom: 10px;
+ }
+
+
+
+}

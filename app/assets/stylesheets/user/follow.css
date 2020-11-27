@@ -1,29 +1,39 @@
 .followers-user-wrapper{
-  background-color: lawngreen;
+  background-color: gainsboro;
   width: 75vw;
-  height: 100vh;
-  padding-top: 15vh;
+  height: 90vh;
+  padding-top: 10vh;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.card-wrapper{
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+  padding-right: 25px;
 }
 
 .followers-user-container {
   background-color: lightblue;
   /* ここの記述は要確認 */
-  width: calc((100% -50px) / 4);
-  height: calc(85vh - 80%);
+  width: calc((100% - 100px) / 4);
+  height: calc(100% - 80%);
   display: flex;
   position: relative;
   align-items: center;
-  margin: 25px;
+  margin-left: 25px;
 }
 .followers-user-icon {
-  background-color: lightsalmon;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   position: absolute;
   left: 6%;
+  border: solid 2px;
 }
 
 .follwores-name-container {
@@ -33,6 +43,39 @@
   text-align: center;
 }
 
-.follwores-user-nickname {
-font-size: 15px;
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .followers-user-wrapper{
+   padding-top: 5vh;
+   height: 95vh;
+   width: 100vw;
+ }
+
+ .card-wrapper{
+   margin: auto;
+   flex-wrap: initial;
+   display: initial;
+   padding-right: initial;
+ }
+
+ .followers-user-container{
+   width: 100%;
+   margin-left: initial;
+   margin-bottom:  20px;
+   height: calc((100% - 25px * 8) / 8);
+   justify-content: space-around;
+   position: initial;
+ }
+
+ .followers-user-icon{
+   width: 50px;
+   height: 50px;
+   position: initial;
+ }
+
+ .follwores-name-container{
+   position: initial;
+   right: initial;
+ }
 }

@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 2px;
 }
 
 .user-header-profile {
@@ -90,4 +91,31 @@
   height: 100%;
   border-radius: 50%;
   border: 2px solid;
+}
+
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+  .user-account-container{
+    height: 13vh;
+    padding-top: 5vh;
+    width: 100vw;
+  }
+
+  .user-header-icon{
+    width: 80px;
+    height: 80px;
+  }
+  
+  .user-header-profile{
+    font-size: 10px;
+  }
+
+  .follow-wrapper{
+    font-size: 10px;
+  }
+
+  .accbox .accshow{
+    font-size: 10px;
+  }
 }

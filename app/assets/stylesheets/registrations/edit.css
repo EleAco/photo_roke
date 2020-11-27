@@ -41,7 +41,6 @@
 .edit-avatar{
   position: absolute;
   width: 250px;
-  border-radius: 50%;
 }
 
 .edit-profile-container{
@@ -82,4 +81,56 @@ border: 2px solid;
   position: absolute;
   width: 250px;
   border-radius: 50%;
+}
+
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .edit-wrapper{
+   padding-top: 5vh;
+   height: 95vh;
+   width: 95vw;
+ }
+
+ .else-avatar-container{
+   padding-top: 50px;
+   position: initial;
+   margin: auto;
+ }
+
+ .true-avatar-container
+ 
+ .else-edit-avatar{
+   width: 150px;
+   height: 150px;
+ }
+
+ .edit-avatar-text{
+   margin-top: 5vh;
+ }
+
+ .edit-avatar-upload{
+   justify-content: initial;
+   margin: initial;
+   display: initial;
+ }
+
+ .edit-avatar{
+   width: 100%;
+   position: initial;
+ }
+
+ .edit-profile-container{
+   margin-top: 6vh;
+   height: calc(100% - 70%);
+ }
+
+ .edit-profile{
+   width: 100%;
+ }
+
+ .avatar-img{
+   width: 150px;
+   height: 150px;
+ }
 }

@@ -9,6 +9,13 @@
   left: 30px;
 }
 
+.home-photo-icon{
+  height: 90%;
+  margin-top: 10px;
+  position: absolute;
+  left: 30px;
+}
+
 .photoroke-icon-photo{
   height: 100%;
 }
@@ -63,4 +70,35 @@
 .gest-text{
   text-align: center;
   margin-left: 12px;
+}
+
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+ .home-header{
+   margin-top: 0px;
+   left: 0px;
+   justify-content: space-around;
+   background-color: snow;
+ }
+
+ .sign-up-container{
+  position: static;
+  right: 0px;
+ }
+
+ .log-in-container{
+  position: static;
+  right: 0px;
+ }
+
+ .gest-container{
+  position: static;
+  right: 0px;
+ }
+
+ .home-photo-icon{
+  position: initial;
+ }
+ 
 }

@@ -53,7 +53,7 @@
 .photo-roke-img{
   height: calc(100% - 75%);
   width: 100%;
-  padding-top: 25px;
+  padding-top: 2vh;
   display: flex;
   justify-content: center;
 }
@@ -69,15 +69,15 @@
 }
 
 .photoroke-explanation-container{
-  height: calc(100% - calc(50% - 95px));
+  height: calc(100% - calc(25% + 135px + 2vh));
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .map-illustration-container{
-  width: 15%;
-  height: 90%;
+  width: calc(100% / 3);
+  height: 75%;
 }
 
 .map-illustration{
@@ -96,8 +96,8 @@
 }
 
 .photo-illustration-container{
-  width: 15%;
-  height: 90%;
+  width: calc(100% / 3);
+  height: 75%;
   position: relative;
 }
 
@@ -109,4 +109,36 @@
   border-radius: 25%;
   position: absolute;
   object-position: 78%;
+}
+ 
+/* 〜479px：スマートフォン縦
+------------------------------ */
+@media screen and (max-width:479px) { 
+
+  .home-photo p{
+    top: 400px;
+    left: 0px;
+    font-size: 68px;
+  }
+
+  .home-photo span{
+    margin-left: 0px;
+  }
+
+  .exp-text{
+    font-size: 21px;
+  }
+
+  .photoroke-explanation-container{
+    height: calc(100% - calc(25% + 122px + 2vh));
+  }
+
+  .map-illustration-container{
+   height: 85%;
+  }
+
+  .photo-illustration-container{
+    height: 85%;
+  }
+
 }
