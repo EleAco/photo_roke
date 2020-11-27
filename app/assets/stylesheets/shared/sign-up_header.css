@@ -1,6 +1,6 @@
 .post-header {
   width: 100vw;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -47,23 +47,6 @@
   height: 100vh;
   padding-top: 10vh;
 }
-
-
-/* 600px〜959px：タブレット
------------------------------- */
-@media screen and (min-width:600px) and (max-width:959px) {
- 
- 
-}
- 
- 
-/* 480px〜599px：SP横
------------------------------- */
-@media screen and (min-width:480px) and (max-width:599px) { 
- 
- 
-}
- 
  
 /* 〜479px：スマートフォン縦
 ------------------------------ */
@@ -75,5 +58,9 @@
   .sign-up-wrapper{
     width: 100%;
     height: 100%;
+  }
+
+  .post-header{
+    height: 5vh;
   }
 }

@@ -35,7 +35,7 @@ def followers
     #@userをフォローしているユーザー
     @user  = User.find(params[:id])
     @users = @user.followers
-    @page_name ="フォワー 一覧"
+    @page_name ="フォロワー 一覧"
 end
 
 end

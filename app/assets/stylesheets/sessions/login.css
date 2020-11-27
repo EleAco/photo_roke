@@ -118,22 +118,6 @@
   margin-top: 50px;
 }
 
-/* 600px〜959px：タブレット
------------------------------- */
-@media screen and (min-width:600px) and (max-width:959px) {
- 
- 
-}
- 
- 
-/* 480px〜599px：SP横
------------------------------- */
-@media screen and (min-width:480px) and (max-width:599px) { 
- 
- 
-}
- 
- 
 /* 〜479px：スマートフォン縦
 ------------------------------ */
 @media screen and (max-width:479px) { 

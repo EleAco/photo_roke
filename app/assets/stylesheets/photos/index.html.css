@@ -66,7 +66,7 @@
 
 .post-user-icon {
   border-radius: 50%;
-  border: solid;
+  border: solid 2px;
   height: 60px;
   width: 60px;
   display: flex;
@@ -91,7 +91,6 @@
   height: 100%;
   border-radius: 50%;
   object-fit: contain;
-  border: 2px solid;
 }
 
 .photo-avatar{
@@ -162,22 +161,6 @@
   width: 60%;
 }
 
-/* 600px〜959px：タブレット
------------------------------- */
-@media screen and (min-width:600px) and (max-width:959px) {
- 
- 
-}
- 
- 
-/* 480px〜599px：SP横
------------------------------- */
-@media screen and (min-width:480px) and (max-width:599px) { 
- 
- 
-}
- 
- 
 /* 〜479px：スマートフォン縦
 ------------------------------ */
 @media screen and (max-width:479px) { 
@@ -209,6 +192,8 @@
  .user-icon-container{
    margin-top: initial;
    width: initial;
+   padding-left: 20px;
+   position: initial;
  }
 
  .post-user-icon{
