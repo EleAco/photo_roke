@@ -1,23 +1,23 @@
 class PhotosController < ApplicationController
   before_action :move_to_index
-  
+
   def index
     @photo = Photo.all.order('created_at DESC')
-    @page_name ='みんなの投稿'
+    @page_name = 'みんなの投稿'
   end
 
   def new
     @photo = Photo.new
-    @page_name ='投稿ページ'
+    @page_name = '投稿ページ'
   end
 
   def create
     @photo = Photo.new(photo_params)
-      if @photo.save
-        redirect_to root_path
-      else
-        render :new
-      end
+    if @photo.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -44,7 +44,6 @@ class PhotosController < ApplicationController
 
   def search
     @photos = Photo.search(params[:keyword])
-    
   end
 
   private
@@ -53,11 +52,7 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:image, :explanation, :title, :latitude, :longitude).merge(user_id: current_user.id)
   end
 
-
   def move_to_index
-    unless user_signed_in?
-      redirect_to controller: :homes, action: :index
-    end
+    redirect_to controller: :homes, action: :index unless user_signed_in?
   end
-
 end

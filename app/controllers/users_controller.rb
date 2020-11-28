@@ -1,17 +1,16 @@
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
-    @photos = @user.photos.order("created_at DESC")
+    @photos = @user.photos.order('created_at DESC')
     @favorite_photos = @user.favorite_photos
     # @photos = User.photos.order("created_at DESC")
-    @page_name="#{@user.nickname}さんのページ"
+    @page_name = "#{@user.nickname}さんのページ"
   end
 
   def mypage
-    @photos = current_user.photos.order("created_at DESC")
+    @photos = current_user.photos.order('created_at DESC')
     @user = current_user
-    @page_name ="マイページ"
+    @page_name = 'マイページ'
   end
 
   # def follows
@@ -25,17 +24,16 @@ class UsersController < ApplicationController
   # end
 
   def following
-    #@userがフォローしているユーザー
+    # @userがフォローしているユーザー
     @user  = User.find(params[:id])
     @users = @user.following
-    @page_name ="フォロー 一覧"
-end
+    @page_name = 'フォロー 一覧'
+  end
 
-def followers
-    #@userをフォローしているユーザー
-    @user  = User.find(params[:id])
+  def followers
+    # @userをフォローしているユーザー
+    @user = User.find(params[:id])
     @users = @user.followers
-    @page_name ="フォロワー 一覧"
-end
-
+    @page_name = 'フォロワー 一覧'
+  end
 end
