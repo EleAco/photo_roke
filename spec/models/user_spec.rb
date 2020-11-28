@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before do
-   @user = FactoryBot.build(:user)
+    @user = FactoryBot.build(:user)
   end
 
   describe 'ユーザー新規機能' do
@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
       it 'emailに@が含まれれば登録できる' do
         expect(@user).to be_valid
       end
-      
+
       it 'passwordが6文字以上で英数字を含めば登録できる' do
         @user.password = 'test1234'
         @user.password_confirmation = 'test1234'
@@ -26,13 +26,13 @@ RSpec.describe User, type: :model do
       it 'nicknameが空だと登録できない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネーム が入力されていません。")
+        expect(@user.errors.full_messages).to include('ニックネーム が入力されていません。')
       end
 
       it 'emailが空だと登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("メールアドレス が入力されていません。")
+        expect(@user.errors.full_messages).to include('メールアドレス が入力されていません。')
       end
 
       it 'emailに@が含まれていないと登録できない' do
@@ -52,26 +52,26 @@ RSpec.describe User, type: :model do
       it 'passwordが空だと登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード が入力されていません。")
+        expect(@user.errors.full_messages).to include('パスワード が入力されていません。')
       end
 
       it 'passwordが6文字以下だと登録できない' do
         @user.password = 'te12'
         @user.password_confirmation = 'te12'
-        @user.valid? 
+        @user.valid?
         expect(@user.errors.full_messages).to include('パスワード は6文字以上に設定して下さい。')
       end
 
       it 'passwordに英数字両方含まれていないと登録できない' do
         @user.password = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード は英字と数字の両方を含めて設定してください。")
+        expect(@user.errors.full_messages).to include('パスワード は英字と数字の両方を含めて設定してください。')
       end
 
       it 'passwordが存在してもpassword_confirmationが空だと登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("確認用パスワード とパスワードが一致しません")
+        expect(@user.errors.full_messages).to include('確認用パスワード とパスワードが一致しません')
       end
     end
   end

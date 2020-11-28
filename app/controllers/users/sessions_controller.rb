@@ -1,20 +1,17 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-
-
   def new_guest
     user = User.guset
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました'
   end
 
-
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   def new
-    @page_name = "ログインページ"
+    @page_name = 'ログインページ'
     super
   end
 

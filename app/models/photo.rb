@@ -9,16 +9,15 @@ class Photo < ApplicationRecord
     i.validates :image
   end
 
-  validates :title, length: {maximum:20}
-  validates :explanation, length: {maximum: 500}
-
+  validates :title, length: { maximum: 20 }
+  validates :explanation, length: { maximum: 500 }
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Photo.where('title LIKE(?)', "%#{search}%")
     else
       Photo.all
