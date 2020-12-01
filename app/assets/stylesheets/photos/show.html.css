@@ -109,6 +109,14 @@
   transform: translateY(4px);
   border-bottom: none;
 }
+
+.latitude-value{
+  display: none;
+}
+
+.longitude-value{
+  display: none;
+}
  
 /* 〜479px：スマートフォン縦
 ------------------------------ */
