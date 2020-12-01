@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def following
-    # @userがフォローしているユーザー 
+    # @userがフォローしているユーザー
     @users = @user.following
     @page_name = 'フォロー 一覧'
   end
