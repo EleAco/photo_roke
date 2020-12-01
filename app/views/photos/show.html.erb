@@ -126,8 +126,15 @@
             </p>
           </div>
         <% else %>
-          <p class='comment-table-container'>
-          <%= comment.text %>
+        <div class='comment-table-container'>
+            <strong class='comment-table-nickname'>
+              <%= link_to comment.user.nickname, user_path(@photo.user.id) %>
+              :
+              </strong>
+            <p class='comment-table-text'>
+              <%= comment.text %>
+            </p>
+          </div>
         <% end %>
       <% end %>
    <% end %>
