@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
+  before_action :user_item, only: [:show, :following, :followers]
+
   def show
-    @user = User.find(params[:id])
     @photos = @user.photos.order('created_at DESC')
     @favorite_photos = @user.favorite_photos
-    # @photos = User.photos.order("created_at DESC")
     @page_name = "#{@user.nickname}さんのページ"
   end
 
@@ -13,27 +13,21 @@ class UsersController < ApplicationController
     @page_name = 'マイページ'
   end
 
-  # def follows
-  #   user = User.find(params[:id])
-  #   @users = user.followings
-  # end
-
-  # def followers
-  #   user = User.find(params[:id])
-  #   @users = user.followers
-  # end
-
   def following
-    # @userがフォローしているユーザー
-    @user  = User.find(params[:id])
+    # @userがフォローしているユーザー 
     @users = @user.following
     @page_name = 'フォロー 一覧'
   end
 
   def followers
     # @userをフォローしているユーザー
-    @user = User.find(params[:id])
     @users = @user.followers
     @page_name = 'フォロワー 一覧'
+  end
+
+  private
+
+  def user_item
+    @user = User.find(params[:id])
   end
 end

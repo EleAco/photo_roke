@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :move_to_index
+  before_action :set_photo, only: [:show, :edit]
 
   def index
     @photo = Photo.all.order('created_at DESC')
@@ -21,7 +22,6 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find(params[:id])
     @comment = Comment.new
     @comments = @photo.comments.includes(:user)
     @page_name = @photo.title
@@ -34,7 +34,6 @@ class PhotosController < ApplicationController
   end
 
   def edit
-    @photo = Photo.find(params[:id])
   end
 
   def update
@@ -51,8 +50,12 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:image, :explanation, :title, :latitude, :longitude).merge(user_id: current_user.id)
   end
-
+  
   def move_to_index
     redirect_to controller: :homes, action: :index unless user_signed_in?
+  end
+
+  def set_photo
+    @photo = Photo.find(params[:id])
   end
 end
